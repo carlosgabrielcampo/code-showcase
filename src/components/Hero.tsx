@@ -38,8 +38,8 @@ export function Hero({ user, isLoading }: HeroProps) {
 
       <div className="container max-w-6xl mx-auto px-4 relative">
         <div className="flex flex-col md:flex-row items-center md:items-start gap-8">
-          {/* Avatar */}
-          <div className="relative group">
+          {/* Avatar - Clickable to Profile */}
+          <a href="/profile" className="relative group cursor-pointer">
             <div className="absolute -inset-1 bg-gradient-to-r from-primary/30 to-primary/10 rounded-full blur opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
             <img
               src={user.avatar_url}
@@ -51,7 +51,7 @@ export function Hero({ user, isLoading }: HeroProps) {
                 'group-hover:scale-105'
               )}
             />
-          </div>
+          </a>
 
           {/* Info */}
           <div className="flex-grow text-center md:text-left">
