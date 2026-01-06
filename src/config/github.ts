@@ -1,6 +1,6 @@
 // GitHub configuration
 // Replace with your GitHub username
-export const GITHUB_USERNAME = 'octocat'; // Change this to your GitHub username
+export const GITHUB_USERNAME = 'carlosgabrielcampo'; // Change this to your GitHub username
 
 export const GITHUB_API_BASE = 'https://api.github.com';
 

@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Github, Terminal } from 'lucide-react';
+import { Github, Terminal, Linkedin } from 'lucide-react';
 import { GITHUB_USERNAME } from '@/config/github';
 import type { GitHubUser } from '@/types/github';
 import { cn } from '@/lib/utils';
@@ -36,6 +36,21 @@ export function Header({ user, minimal = false }: HeaderProps) {
                 Projects
               </Link>
             )}
+            <a
+              href={`https://www.linkedin.com/in/carlosgcampo/?locale=en_US`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={cn(
+                'flex items-center gap-2 px-3 py-1.5 rounded-md',
+                'text-sm font-mono text-muted-foreground',
+                'border border-border hover:border-primary/50',
+                'hover:text-foreground transition-all duration-200',
+                'hover:shadow-sm hover:shadow-primary/10'
+              )}
+            >
+              <Linkedin className="w-4 h-4" />
+              <span className="hidden sm:inline">LinkedIn</span>
+            </a>
             <a
               href={`https://github.com/${GITHUB_USERNAME}`}
               target="_blank"

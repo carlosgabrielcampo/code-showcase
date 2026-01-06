@@ -1,6 +1,7 @@
-import { MapPin, Building, Link as LinkIcon } from 'lucide-react';
+import { MapPin, Building, Link as LinkIcon, Mail } from 'lucide-react';
 import type { GitHubUser } from '@/types/github';
 import { cn } from '@/lib/utils';
+import { sendEmail } from '@/services/email';
 
 interface HeroProps {
   user?: GitHubUser | null;
@@ -71,23 +72,12 @@ export function Hero({ user, isLoading }: HeroProps) {
                   {user.location}
                 </span>
               )}
-              {user.company && (
-                <span className="flex items-center gap-1.5">
-                  <Building className="w-4 h-4" />
-                  {user.company}
-                </span>
-              )}
-              {user.blog && (
-                <a
-                  href={user.blog.startsWith('http') ? user.blog : `https://${user.blog}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-1.5 hover:text-primary transition-colors"
-                >
-                  <LinkIcon className="w-4 h-4" />
-                  {user.blog.replace(/^https?:\/\//, '')}
+              <span className="flex items-center gap-1.5">
+                <Mail className="w-4 h-4" />
+                <a onClick={sendEmail} className='cursor-pointer hover:underline'>
+                  carlosgabrielcampo@gmail.com
                 </a>
-              )}
+              </span>
             </div>
 
             {/* Stats */}
