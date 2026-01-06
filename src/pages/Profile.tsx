@@ -63,50 +63,6 @@ export default function Profile() {
         </header>
 
         <main className="container mx-auto px-4 py-8 max-w-4xl">
-          {/* Profile Header */}
-          <section className="mb-8">
-            <Card className="overflow-hidden">
-              <div className="h-32 bg-gradient-to-r from-primary/20 via-primary/10 to-accent/20" />
-              <CardContent className="relative pt-0 pb-6">
-                <div className="flex flex-col sm:flex-row gap-4 items-start sm:items-end -mt-16 sm:-mt-12">
-                  <Avatar className="w-32 h-32 border-4 border-background shadow-xl">
-                    <AvatarImage src={avatarUrl} alt={profile.identity.name} />
-                    <AvatarFallback className="text-2xl font-bold bg-primary text-primary-foreground">
-                      {initials}
-                    </AvatarFallback>
-                  </Avatar>
-                  
-                  <div className="flex-1 pt-4 sm:pt-0 sm:pb-2">
-                    <h1 className="text-2xl sm:text-3xl font-bold text-foreground">
-                      {profile.identity.name}
-                    </h1>
-                    <p className="text-lg text-muted-foreground mt-1">
-                      {profile.identity.headline}
-                    </p>
-                    
-                    <div className="flex flex-wrap gap-4 mt-3 text-sm text-muted-foreground">
-                      {profile.identity.location && (
-                        <span className="flex items-center gap-1">
-                          <MapPin className="w-4 h-4" />
-                          {profile.identity.location}
-                        </span>
-                      )}
-                      {profile.identity.email && (
-                        <a 
-                          href={`mailto:${profile.identity.email}`}
-                          className="flex items-center gap-1 hover:text-primary transition-colors"
-                        >
-                          <Mail className="w-4 h-4" />
-                          {profile.identity.email}
-                        </a>
-                      )}
-                    </div>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-          </section>
-
           {/* About */}
           <section className="mb-8">
             <Card>
@@ -137,7 +93,11 @@ export default function Profile() {
                       {index > 0 && <Separator className="mb-6" />}
                       <div className="flex gap-4">
                         <div className="w-12 h-12 rounded-lg bg-muted flex items-center justify-center shrink-0">
-                          <Building2 className="w-6 h-6 text-muted-foreground" />
+                          {
+                            exp.logoPath 
+                              ? <img src={exp.logoPath} className='object-fit' />
+                              : <Building2 className="w-6 h-6 text-muted-foreground" />
+                          }
                         </div>
                         <div className="flex-1 min-w-0">
                           <h3 className="font-semibold text-foreground">{exp.title}</h3>
@@ -203,7 +163,11 @@ export default function Profile() {
                       {index > 0 && <Separator className="mb-6" />}
                       <div className="flex gap-4">
                         <div className="w-12 h-12 rounded-lg bg-muted flex items-center justify-center shrink-0">
-                          <GraduationCap className="w-6 h-6 text-muted-foreground" />
+                          {
+                            edu.logoPath 
+                              ? <img src={edu.logoPath} className='object-fit' />
+                              : <GraduationCap className="w-6 h-6 text-muted-foreground" />
+                          }
                         </div>
                         <div className="flex-1">
                           <h3 className="font-semibold text-foreground">{edu.school}</h3>
@@ -263,13 +227,20 @@ export default function Profile() {
                       {index > 0 && <Separator className="mb-4" />}
                       <div className="flex gap-4">
                         <div className="w-12 h-12 rounded-lg bg-muted flex items-center justify-center shrink-0">
-                          <Award className="w-6 h-6 text-muted-foreground" />
+                        {
+                          cert.logoPath 
+                          ? <img src={cert.logoPath} className='object-fit' />
+                          : <Award className="w-6 h-6 text-muted-foreground" />
+                        }
                         </div>
                         <div>
                           <h3 className="font-semibold text-foreground">{cert.name}</h3>
                           <p className="text-muted-foreground">{cert.issuer}</p>
                           <p className="text-sm text-muted-foreground mt-1">
                             Issued {cert.issueDate}
+                          </p>
+                          <p className="text-sm text-muted-foreground mt-1">
+                            Credential code {cert.credentialCode}
                           </p>
                           {cert.credentialUrl && (
                             <a 

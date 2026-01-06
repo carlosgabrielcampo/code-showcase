@@ -20,6 +20,7 @@ export interface Experience {
   endDate?: string; // undefined = present
   description: string;
   skills?: string[];
+  logoPath?: string;
 }
 
 export interface Education {
@@ -30,6 +31,7 @@ export interface Education {
   startYear: number;
   endYear?: number;
   description?: string;
+  logoPath?: string;
 }
 
 export interface Certification {
@@ -38,6 +40,8 @@ export interface Certification {
   issuer: string;
   issueDate: string;
   credentialUrl?: string;
+  logoPath: string;
+  credentialCode?: string;
 }
 
 export interface ProfileData {

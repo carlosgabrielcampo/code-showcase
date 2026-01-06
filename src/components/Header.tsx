@@ -30,10 +30,10 @@ export function Header({ user, minimal = false }: HeaderProps) {
           <div className="flex items-center gap-6">
             {!minimal && (
               <Link
-                to="/"
+                to="/profile"
                 className="text-sm text-muted-foreground hover:text-foreground font-mono transition-colors"
               >
-                Projects
+                Profile
               </Link>
             )}
             <a

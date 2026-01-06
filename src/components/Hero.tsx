@@ -74,7 +74,7 @@ export function Hero({ user, isLoading }: HeroProps) {
               )}
               <span className="flex items-center gap-1.5">
                 <Mail className="w-4 h-4" />
-                <a onClick={sendEmail} className='cursor-pointer hover:underline'>
+                <a onClick={sendEmail} className='cursor-pointer hover:text-primary'>
                   carlosgabrielcampo@gmail.com
                 </a>
               </span>
