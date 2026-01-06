@@ -35,7 +35,7 @@ Owned the full product lifecycle — from backend, automations and sensitive fin
 
 Demonstrated strong adaptability, autonomy, pressure performance and clear communication with stakeholders, ensuring reliable delivery even under tight deadlines.`,
       skills: ['Javascript', 'Node.js', 'React.js', 'Typescript', 'Python'],
-      logoPath: 'src/assets/BR+_logo.avif',
+      logoPath: '/BR+_logo.avif',
     },
     {
       id: 'exp-2',
@@ -53,7 +53,7 @@ Demonstrated strong adaptability, autonomy, pressure performance and clear commu
 
   I developed databases using MongoDB and Mongoose, to integrate with all of our applications.`,
       skills: ['Javascript', 'Node.js', 'React.js', 'MongoDB', 'PostgresSQL', 'Puppeteer'],
-      logoPath: 'src/assets/vmd_logo.jpeg',
+      logoPath: '/vmd_logo.jpeg',
     },
     {
       id: 'exp-3',
@@ -71,7 +71,7 @@ My classes encompass Web Development introductory topics: JavaScript (ES6+), Fro
 
 Developed and delivered comprehensive JavaScript lessons, catering to students of beginner levels. Focused on hands-on learning with real-world projects, allowing students to apply JavaScript concepts to practical scenarios. My classes encompass Web Development introductory topics: JavaScript (ES6+), Front-end Technologies (HTML5, CS3), NodeJS, DOM manipulation, Webpack, Modules and Asynchronicity.`,
       skills: ['Javascript', 'Node.js', 'React.js', 'MongoDB', 'PostgresSQL', 'Puppeteer'],
-      logoPath: 'src/assets/senai_logo.jpeg',
+      logoPath: '/senai_logo.jpeg',
     },
     {
       id: 'exp-4',
@@ -91,7 +91,7 @@ Integrated the chatbot with banking platforms to facilitate contract signing.
 
 The project concluded in September 2023, due to changes in the company's strategic focus and priorities.`,
       skills: ['Node.js', 'React.js', 'MongoDB', 'PostgresSQL', 'Javascript'],
-      logoPath: 'src/assets/peg_logo.jpg',
+      logoPath: '/peg_logo.jpg',
     },
   ],
 
@@ -104,7 +104,7 @@ The project concluded in September 2023, due to changes in the company's strateg
       startYear: 2021,
       endYear: 2022,
       description: 'Trybe is a web development school that has a genuine commitment to the professional success of its students. With the Shared Success Model, those who study at Trybe have the option of paying only when they are already working.There are more than 1500 hours of training that covers fundamentals of web development, development, Front-end, Back-end, computer science, software engineering, agile methodologies and soft skills.',
-      logoPath: 'src/assets/betrybe_logo.jpeg',
+      logoPath: '/betrybe_logo.jpeg',
     },
   ],
 
@@ -127,7 +127,7 @@ The project concluded in September 2023, due to changes in the company's strateg
       issuer: 'Trybe',
       issueDate: '2022-04',
       credentialUrl: 'https://www.credential.net/dc77cae1-8e88-4b8a-a5da-8e103d343450#acc.iRmQlrVM',
-      logoPath: 'src/assets/betrybe_logo.jpeg',
+      logoPath: '/betrybe_logo.jpeg',
       credentialCode: '50485837'
     },
     {
@@ -136,7 +136,7 @@ The project concluded in September 2023, due to changes in the company's strateg
       issuer: 'IELTS Official',
       issueDate: '2022-04',
       credentialUrl: 'https://www.credential.net/dc77cae1-8e88-4b8a-a5da-8e103d343450#acc.iRmQlrVM',
-      logoPath: 'src/assets/ielts_logo.jpeg',
+      logoPath: '/ielts_logo.jpeg',
       credentialCode: '23AU509850CAMC240A'
     },
   ],
