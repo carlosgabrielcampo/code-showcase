@@ -2,7 +2,7 @@ import { cn } from '@/lib/utils';
 
 interface TagProps {
   children: React.ReactNode;
-  variant?: 'default' | 'language' | 'topic' | 'outline';
+  variant?: 'default' | 'secondary' | 'language' | 'topic' | 'outline';
   color?: string;
   size?: 'sm' | 'md';
   className?: string;
@@ -28,7 +28,8 @@ export function Tag({
   );
 
   const variants = {
-    default: 'bg-secondary text-secondary-foreground',
+    default: 'bg-primary/10 text-primary border border-primary/20',
+    secondary: 'bg-secondary text-secondary-foreground',
     language: 'bg-secondary/80 text-foreground',
     topic: 'bg-muted text-muted-foreground hover:bg-muted/80',
     outline: 'border border-border bg-transparent text-muted-foreground hover:border-primary/50 hover:text-foreground',
