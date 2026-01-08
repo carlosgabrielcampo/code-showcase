@@ -11,7 +11,8 @@ import { FilterBar } from "@/components/FilterBar";
 import { ProjectGrid } from "@/components/ProjectGrid";
 import { FilterState } from "@/types/github";
 
-export default function Projects({ filters, handleFilter }: { filters: string[], handleFilter: string }) {
+
+export default function Projects({ filters, handleFilter }: { filters: FilterState, handleFilter: (newFilters: Partial<FilterState>) => void }) {
     const {
         data: repos,
         isLoading: reposLoading,

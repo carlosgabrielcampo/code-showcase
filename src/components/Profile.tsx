@@ -2,9 +2,9 @@ import { Calendar } from 'lucide-react';
 import { Tag } from '@/components/ui/Tag';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { ProfileData } from '@/types/profile';
+import { FilterState } from '@/types/github';
 
 function formatDateRange(startDate: string, endDate?: string): string {
-
 
   const formatDate = (date: string) => {
     const [year, month] = date.split('-');
@@ -17,7 +17,7 @@ function formatDateRange(startDate: string, endDate?: string): string {
   return `${start} - ${end}`;
 }
 
-export default function Profile({ profile, filters, handleFilter }: { profile: ProfileData }) {
+export default function Profile({ profile, filters, handleFilter }: { profile: ProfileData, filters: FilterState, handleFilter: (newFilters: Partial<FilterState>) => void}) {
   return (
     <>
       {profile.experience.length > 0 && (

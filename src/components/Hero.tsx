@@ -1,14 +1,15 @@
 import type { GitHubUser } from '@/types/github';
 import { Tag } from './ui/Tag';
 import { Button } from './ui/button';
-import { Link } from 'react-router-dom'
-import { cn } from '@/lib/utils';
+import { FilterState } from '@/types/github';
 
 
 interface HeroProps {
   user?: GitHubUser | null;
   isLoading?: boolean;
   profile?: Record<string, string>
+  filters: FilterState;
+  handleFilter: (newFilters: Partial<FilterState>) => void;
 }
 
 export function Hero({ user, isLoading, profile, filters, handleFilter }: HeroProps) {

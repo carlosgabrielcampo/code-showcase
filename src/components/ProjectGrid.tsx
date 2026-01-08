@@ -9,9 +9,6 @@ export function ProjectGrid({ repos }: ProjectGridProps) {
   if (repos.length === 0) {
     return (
       <div className="flex flex-col items-center justify-center py-20 text-center">
-        <div className="w-16 h-16 mb-4 rounded-full bg-secondary flex items-center justify-center">
-          <span className="text-2xl">📂</span>
-        </div>5
         <p className="text-sm text-muted-foreground max-w-sm">
           Try adjusting your filters or search terms to find what you're looking for.
         </p>
