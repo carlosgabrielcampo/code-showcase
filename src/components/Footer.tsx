@@ -2,8 +2,8 @@ import { Link } from 'react-router-dom';
 
 export function Footer() {
     return (
-        <footer className="border-t border-border py-10">
-          <div className="flex justify-between mx-auto px-4 text-center px-60">
+        <footer className="border-t border-border py-8 md:py-10">
+          <div className="flex flex-col sm:flex-row gap-4 sm:gap-0 justify-between items-center mx-auto px-4 sm:px-8 md:px-16 lg:px-32 xl:px-60 text-center">
             <p className="text-sm text-muted-foreground font-mono">
               @ 2025 Carlos Roman
             </p>
@@ -11,7 +11,7 @@ export function Footer() {
               to={"https://github.com/carlosgabrielcampo"}
               target="_blank" 
               rel="noopener noreferrer"
-              className="text-sm text-muted-foreground hover:text-primary font-mono transition-colors"
+              className="text-sm text-muted-foreground hover:text-primary active:text-primary font-mono transition-colors p-2"
             >
               View source on GitHub
             </Link>

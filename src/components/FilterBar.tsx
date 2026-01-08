@@ -6,8 +6,7 @@ import { cn } from '@/lib/utils';
 interface FilterBarProps {
   filters: FilterState;
   onFilterChange: (filters: Partial<FilterState>) => void;
-  languages: string[];
-  topics: string[];
+  skills: string[];
   resultCount: number;
 }
 
@@ -21,7 +20,6 @@ const sortOptions: { value: SortOption; label: string }[] = [
 export function FilterBar({
   filters,
   onFilterChange,
-  languages,
   skills,
   resultCount,
 }: FilterBarProps) {
