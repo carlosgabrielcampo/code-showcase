@@ -65,12 +65,18 @@ export function Contact(){
                                 </div>
                             </div>
                             <div className="space-x-4 flex pt-4">
-                                <Link>
+                                <Link 
+                                    to="/#projects"
+                                >
                                     <Button size="sm" variant="no_saturation"> 
                                         Current Projects
                                     </Button>
                                 </Link>
-                                <Link>
+                                <Link 
+                                    to="https://docs.google.com/document/d/1gs2qe2-4vzrr2CHzCRg2Pdwq-c3VeH0GeTQC0pfFu0A/edit?usp=sharing"
+                                    target="_blank" 
+                                    rel="noopener noreferrer"
+                                >
                                     <Button size="sm" variant="secondary"> 
                                         Resume
                                     </Button>

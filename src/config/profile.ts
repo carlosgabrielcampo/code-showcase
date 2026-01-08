@@ -61,9 +61,10 @@ I’m open to PJ opportunities (remote, hybrid, or on-site) where I can keep gro
       startDate: '2022-11',
       endDate: '2023-10',
       description: [
-        'Developed and delivered comprehensive JavaScript lessons, catering to students of beginner levels.',
-        'Focused on hands-on learning with real-world projects, allowing students to apply JavaScript concepts to practical scenarios.',
-        'My classes encompass Web Development introductory topics: JavaScript (ES6+), Front-end Technologies (HTML5, CS3), NodeJS, DOM manipulation, Webpack, Modules and Asynchronicity.'
+        'Designed and delivered JavaScript courses for beginner-level students, focusing on practical learning and real-world application.',
+'Taught core web development concepts including JavaScript (ES6+), HTML5, CSS3, Node.js, DOM manipulation, modules, asynchronous programming, and basic tooling such as Webpack.',
+'Emphasized hands-on projects to help students translate theoretical concepts into working solutions.',
+'Strengthened technical communication skills by adapting explanations to different learning levels and backgrounds.'
       ],
       skills: ['Javascript', 'Node.js', 'React.js', 'MongoDB', 'PostgresSQL', 'Puppeteer'],
       logoPath: '/senai_logo.jpeg',
