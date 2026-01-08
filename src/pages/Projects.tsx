@@ -1,4 +1,4 @@
-import React, { useMemo } from "react";
+import { useMemo } from "react";
 import {
   filterRepositories,
   getUniqueLanguages,
@@ -10,7 +10,6 @@ import { LoadingState } from "@/components/LoadingState";
 import { FilterBar } from "@/components/FilterBar";
 import { ProjectGrid } from "@/components/ProjectGrid";
 import { FilterState } from "@/types/github";
-import { SectionTitle } from "@/components/SectionTitle";
 
 export default function Projects({ filters, setFilters }: { filters: string[], setFilters: string }) {
     const {

@@ -2,7 +2,7 @@ import { cn } from '@/lib/utils';
 
 interface TagProps {
   children: React.ReactNode;
-  variant?: 'default' | 'secondary' | 'language' | 'topic' | 'outline';
+  variant?: 'default' | 'secondary' | 'language' | 'topic' | 'outline' | 'blurred';
   color?: string;
   size?: 'sm' | 'md';
   className?: string;

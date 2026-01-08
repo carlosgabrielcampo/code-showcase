@@ -9,9 +9,9 @@ import Projects from './Projects';
 import { Footer } from '@/components/Footer';
 import { Head } from '@/components/Head';
 import { Background } from '@/components/Background';
-import { SectionTitle } from '@/components/SectionTitle';
 import { Section } from '@/components/Section';
 import { Contact } from '@/components/Contact';
+import { useTheme  } from '@/context/ThemeContext';
 
 const initialFilters: FilterState = {
   language: null,
@@ -36,7 +36,7 @@ export default function Index() {
       <Head />
       <Background>
         <Header user={user} />
-        <main className='px-60'>
+        <main className='px-60 pt-48 pb-24 space-y-6 items-center md:items-start text-center md:text-left'>
           <Hero user={user} isLoading={userLoading} profile={profile}/>
           <Section title="Featured projects" subtitle="Real work, real decisions. Case studies focus on tradeoffs and outcomes." arialabel="projects-heading">
             <Projects filters={filters} setFilters={setFilters} />

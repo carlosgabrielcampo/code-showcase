@@ -13,8 +13,13 @@ const buttonVariants = cva(
         gradient: cn(
           "aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive",
           "main-gradient text-primary-foreground hover:bg-primary/40 hover:shadow-md hover:-translate-y-0.5",
-          "active:translate-y-0 transition-all duration-200 ease-out has-[>svg]:px-3 btn-sig, disabled:opacity-50",
+          "active:translate-y-0 transition-all duration-200 ease-out has-[>svg]:px-3 btn-sig",
           "active:shadow-sm backdrop-blur-lg"
+        ),
+        no_saturation: cn(
+          "aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive",
+          "no-saturation-gradient opacity-90 hover:bg-primary/40 hover:shadow-md hover:-translate-y-0.5 text-primary-foreground",
+          "active:translate-y-0 transition-all duration-200 ease-out has-[>svg]:px-3 btn-sig active:shadow-sm",
         ),
         destructive: "bg-destructive text-destructive-foreground hover:bg-destructive/90",
         outline: "border border-input bg-background hover:bg-accent hover:text-accent-foreground",
@@ -27,7 +32,6 @@ const buttonVariants = cva(
         sm: "h-9 rounded-md px-3",
         lg: "h-11 rounded-md px-8",
         icon: "h-10 w-10",
-        none: ""
       },
     },
     defaultVariants: {

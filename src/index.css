@@ -11,14 +11,12 @@
 
     --card: 220 18% 8%;
     --card-foreground: 210 20% 92%;
-    
-    /* --signature: lab(52.048% 20.6235 -40.0982); */
-    /* --signature: lab(82.54, -48.46, -4.59);
-    --signature-2: lab(79.8531% -43.2599 -11.739);     */
-    /* --signature-2: lab(49.8531% 25.2599 -25.739);     */
+
+    --primary-no-saturation: 175 0% 70%;
+    --signature-no-saturation:  179.5 0% 65.5%;
 
     --signature: 179.5 89.73% 45.5%;
-    
+
     --popover: 220 18% 8%; 
     --popover-foreground: 210 20% 92%;
 
@@ -53,6 +51,7 @@
     --gradient-hero: linear-gradient(135deg, hsl(220 20% 4%) 0%, hsl(220 18% 10%) 100%);
     --gradient-card: linear-gradient(145deg, hsl(220 18% 10%) 0%, hsl(220 18% 6%) 100%);
     --gradient-button: linear-gradient(90deg, hsl(var(--primary) / 0.60) 0%, hsl(var(--signature) / 0.90) 100%);
+    --gradient-no-saturation: linear-gradient(90deg, hsl(var(--primary-no-saturation) / 0.60) 0%, hsl(var(--signature-no-saturation) / 0.90) 100%);
     --gradient-border: linear-gradient(135deg, hsl(175 80% 50% / 0.3), hsl(175 80% 50% / 0.05));
     
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -137,6 +136,10 @@
 
   .main-gradient {
     background: var(--gradient-button);
+  }
+
+  .no-saturation-gradient {
+    background: var(--gradient-no-saturation);
   }
 
   .card-gradient {
