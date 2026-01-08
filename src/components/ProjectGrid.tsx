@@ -11,8 +11,7 @@ export function ProjectGrid({ repos }: ProjectGridProps) {
       <div className="flex flex-col items-center justify-center py-20 text-center">
         <div className="w-16 h-16 mb-4 rounded-full bg-secondary flex items-center justify-center">
           <span className="text-2xl">📂</span>
-        </div>
-        <h3 className="text-lg font-medium text-foreground mb-2">No projects found</h3>
+        </div>5
         <p className="text-sm text-muted-foreground max-w-sm">
           Try adjusting your filters or search terms to find what you're looking for.
         </p>

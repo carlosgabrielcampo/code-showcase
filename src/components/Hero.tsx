@@ -1,15 +1,17 @@
-import { MapPin, Building, Link as LinkIcon, Mail } from 'lucide-react';
 import type { GitHubUser } from '@/types/github';
+import { Tag } from './ui/Tag';
+import { Button } from './ui/button';
+import { Link } from 'react-router-dom'
 import { cn } from '@/lib/utils';
-import { sendEmail } from '@/services/email';
-import { Link } from 'react-router-dom';
+
 
 interface HeroProps {
   user?: GitHubUser | null;
   isLoading?: boolean;
+  profile?: Record<string, string>
 }
 
-export function Hero({ user, isLoading }: HeroProps) {
+export function Hero({ user, isLoading, profile }: HeroProps) {
   if (isLoading) {
     return (
       <section className="py-16 md:py-24">
@@ -30,76 +32,37 @@ export function Hero({ user, isLoading }: HeroProps) {
   if (!user) return null;
 
   return (
-    <section className="py-16 md:py-24 relative overflow-hidden">
-      {/* Background decoration */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
-        <div className="absolute bottom-0 right-1/4 w-64 h-64 bg-primary/3 rounded-full blur-3xl" />
-      </div>
-
-      <div className="container max-w-6xl mx-auto px-4 relative">
-        <div className="flex flex-col md:flex-row items-center md:items-start gap-8">
-          <Link
-            to="/profile"
-            className="relative group cursor-pointer"
+    <section className="pt-48 space-y-6 items-center md:items-start text-center md:text-left">
+        {/* Info */}
+      <h1 className="text-3xl md:text-4xl font-bold text-foreground">
+        High Impact <span className='text-primary'>Full Stack Developer</span>
+      </h1>
+      {user.bio && (
+        <p className="text-lg text-muted-foreground max-w-2xl">
+          I'm experienced in full stack development, APIs and automations, focused on building scalable and high-impact solutions.
+        </p>
+      )}
+      
+      <div className="flex flex-wrap gap-2">
+        { profile.skills.map(skill => 
+          <Tag
+            key={skill}
+            variant="blurred"
+            // onClick={() =>onFilterChange({ language: filters.language === lang ? null : lang })}
+            // active={filters.language === lang}
+            size="sm"
           >
-          <div className="absolute -inset-1 bg-gradient-to-r from-primary/30 to-primary/10 rounded-full blur opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-            <img
-              src={user.avatar_url}
-              alt={`${user.name || user.login}'s avatar`}
-              className={cn(
-                'relative w-28 h-28 rounded-full',
-                'border-2 border-border',
-                'transition-transform duration-300',
-                'group-hover:scale-105'
-              )}
-            />
-          </Link>
-          
-          {/* Info */}
-          <div className="flex-grow text-center md:text-left">
-            <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-2">
-              {user.name || user.login}
-            </h1>
-            {user.bio && (
-              <p className="text-lg text-muted-foreground mb-4 max-w-2xl">
-                {user.bio}
-              </p>
-            )}
-            
-            {/* Meta info */}
-            <div className="flex flex-wrap items-center justify-center md:justify-start gap-4 text-sm text-muted-foreground">
-              {user.location && (
-                <span className="flex items-center gap-1.5">
-                  <MapPin className="w-4 h-4" />
-                  {user.location}
-                </span>
-              )}
-              <span className="flex items-center gap-1.5">
-                <Mail className="w-4 h-4" />
-                <a onClick={sendEmail} className='cursor-pointer hover:text-primary'>
-                  carlosgabrielcampo@gmail.com
-                </a>
-              </span>
-            </div>
-
-            {/* Stats */}
-            <div className="flex items-center justify-center md:justify-start gap-6 mt-6 pt-6 border-t border-border/50">
-              <div className="text-center">
-                <p className="text-2xl font-bold text-foreground font-mono">{user.public_repos}</p>
-                <p className="text-xs text-muted-foreground">Repositories</p>
-              </div>
-              <div className="text-center">
-                <p className="text-2xl font-bold text-foreground font-mono">{user.followers}</p>
-                <p className="text-xs text-muted-foreground">Followers</p>
-              </div>
-              <div className="text-center">
-                <p className="text-2xl font-bold text-foreground font-mono">{user.following}</p>
-                <p className="text-xs text-muted-foreground">Following</p>
-              </div>
-            </div>
-          </div>
-        </div>
+            {skill}
+          </Tag>
+      )}
+      </div>
+      <div className="space-x-4">
+        <Button variant="gradient" size="sm"> 
+          Current Projects
+        </Button>
+        <Button variant="secondary" size="sm"> 
+          Contact
+        </Button>
       </div>
     </section>
   );

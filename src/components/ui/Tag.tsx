@@ -32,7 +32,8 @@ export function Tag({
     secondary: 'bg-secondary text-secondary-foreground',
     language: 'bg-secondary/80 text-foreground',
     topic: 'bg-muted text-muted-foreground hover:bg-muted/80',
-    outline: 'border border-border bg-transparent text-muted-foreground hover:border-primary/50 hover:text-foreground',
+    outline: 'border border-border bg-transparent text-muted-foreground hover:border-primary/50 hover:text-primary',
+    blurred: 'border border-border text-primary hover:border-primary/50 hover:text-primary '
   };
 
   return (

@@ -11,8 +11,15 @@
 
     --card: 220 18% 8%;
     --card-foreground: 210 20% 92%;
+    
+    /* --signature: lab(52.048% 20.6235 -40.0982); */
+    /* --signature: lab(82.54, -48.46, -4.59);
+    --signature-2: lab(79.8531% -43.2599 -11.739);     */
+    /* --signature-2: lab(49.8531% 25.2599 -25.739);     */
 
-    --popover: 220 18% 8%;
+    --signature: 179.5 89.73% 45.5%;
+    
+    --popover: 220 18% 8%; 
     --popover-foreground: 210 20% 92%;
 
     --primary: 175 80% 50%;
@@ -45,6 +52,7 @@
     
     --gradient-hero: linear-gradient(135deg, hsl(220 20% 4%) 0%, hsl(220 18% 10%) 100%);
     --gradient-card: linear-gradient(145deg, hsl(220 18% 10%) 0%, hsl(220 18% 6%) 100%);
+    --gradient-button: linear-gradient(90deg, hsl(var(--primary) / 0.60) 0%, hsl(var(--signature) / 0.90) 100%);
     --gradient-border: linear-gradient(135deg, hsl(175 80% 50% / 0.3), hsl(175 80% 50% / 0.05));
     
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -58,6 +66,27 @@
     --sidebar-accent-foreground: 210 20% 92%;
     --sidebar-border: 220 15% 18%;
     --sidebar-ring: 175 80% 50%;
+
+    ul.custom-bullets {
+  list-style: none; /* hide default bullets */
+  padding-left: 1.2em; /* space for custom bullets */
+}
+
+  ul.custom-bullets li {
+    position: relative;
+    margin-bottom: 0.4em;
+  }
+
+  ul.custom-bullets li::before {
+    content: "";
+    position: absolute;
+    left: -1.2em; /* align bullet */
+    top: 0.4em; /* align vertically */
+    height: 0.6em;
+    width: 0.6em;
+    background-color: var(--primary); /* primary color */
+    border-radius: 50%; /* make it round */
+  }
   }
 
   .dark {
@@ -104,6 +133,10 @@
 
   .glow-subtle {
     box-shadow: var(--glow-subtle);
+  }
+
+  .main-gradient {
+    background: var(--gradient-button);
   }
 
   .card-gradient {

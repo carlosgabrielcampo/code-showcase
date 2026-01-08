@@ -40,7 +40,7 @@ export function FilterBar({
           <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
           <input
             type="text"
-            placeholder="Search projects..."
+            placeholder="Search..."
             value={filters.search}
             onChange={(e) => onFilterChange({ search: e.target.value })}
             className={cn(
@@ -93,7 +93,7 @@ export function FilterBar({
           {languages.slice(0, 8).map((lang) => (
             <Tag
               key={lang}
-              variant="outline"
+              variant="blurred"
               onClick={() =>
                 onFilterChange({ language: filters.language === lang ? null : lang })
               }
@@ -116,7 +116,7 @@ export function FilterBar({
           {topics.slice(0, 10).map((topic) => (
             <Tag
               key={topic}
-              variant="outline"
+              variant="blurred"
               onClick={() =>
                 onFilterChange({ topic: filters.topic === topic ? null : topic })
               }
@@ -132,7 +132,6 @@ export function FilterBar({
         </div>
       )}
 
-      {/* Results Info */}
       <div className="flex items-center justify-between pt-2 border-t border-border/50">
         <p className="text-sm text-muted-foreground font-mono">
           {resultCount} {resultCount === 1 ? 'project' : 'projects'} found

@@ -18,7 +18,7 @@ export interface Experience {
   location?: string;
   startDate: string;
   endDate?: string; // undefined = present
-  description: string;
+  description: string[];
   skills?: string[];
   logoPath?: string;
 }
