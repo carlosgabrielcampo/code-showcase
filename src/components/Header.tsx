@@ -11,7 +11,7 @@ export function Header({ }: HeaderProps) {
   const { theme, setTheme } = useTheme();
   return (
     <header className="fixed top-0 z-50 backdrop-blur-md bg-background/60 border-b border-border w-full bg-opacity-10">
-      <div className="w-full py-4 px-4 sm:px-8 md:px-16 lg:px-32 xl:px-60">
+      <div className="w-full py-1 px-4 sm:px-8 md:px-16 lg:px-32 xl:px-60">
         <nav className="flex items-center justify-between">
           <Link to="/" className="flex items-center gap-2 text-foreground hover:text-primary transition-colors group">
             <span className="font-mono font-semibold text-base sm:text-lg">
