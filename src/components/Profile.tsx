@@ -58,7 +58,7 @@ export default function Profile({ profile, filters, handleFilter }: { profile: P
                     </ul>
                   </div>
                   {exp.skills && exp.skills.length > 0 && (
-                    <div className="flex flex-wrap gap-1.5 mt-3">
+                    <div className="flex flex-wrap gap-1.5 mt-3 sm:justify-start justify-center">
                       {exp.skills.map(skill =>
                         <Tag
                           className='cursor-pointer font-bold'

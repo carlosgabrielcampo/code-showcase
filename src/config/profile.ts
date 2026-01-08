@@ -101,7 +101,7 @@ I’m open to PJ opportunities (remote, hybrid, or on-site) where I can keep gro
     },
   ],
 
-  skills: [ 'React', 'Node.js', 'MongoDB', 'Puppeteer', 'REST APIs', 'Typescript', 'Tailwind CSS' ],
+  skills: [ 'React', 'Node.js', 'MongoDB', 'Puppeteer', 'REST APIs', 'Typescript', 'Tailwind' ],
 
   certifications: [
     {
