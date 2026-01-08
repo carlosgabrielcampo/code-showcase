@@ -17,7 +17,7 @@ function formatDateRange(startDate: string, endDate?: string): string {
   return `${start} - ${end}`;
 }
 
-export default function Profile({ profile }: { profile: ProfileData }) {
+export default function Profile({ profile, filters, handleFilter }: { profile: ProfileData }) {
   return (
     <>
       {profile.experience.length > 0 && (
@@ -61,7 +61,25 @@ export default function Profile({ profile }: { profile: ProfileData }) {
                       </ul>
                       {exp.skills && exp.skills.length > 0 && (
                         <div className="flex flex-wrap gap-1.5 mt-3">
-                          {exp.skills.map(skill => <Tag className='cursor-pointer' key={skill} variant="outline" size="sm">{skill}</Tag>)}
+                          {exp.skills.map(skill => 
+                            <Tag 
+                              className='cursor-pointer font-bold' 
+                              key={skill} 
+                              variant="outline" 
+                              size="sm"
+                              onClick={() =>{
+                                handleFilter({
+                                  topic: filters.topic.includes(skill.toLowerCase()) 
+                                    ? filters.topic.filter((e) => e.toLowerCase() !== skill.toLowerCase())
+                                    : [skill.toLowerCase(), ...filters.topic]
+                                  })
+                                  console.log({skill})
+                              }}
+                              active={filters.topic.includes(skill.toLowerCase())}
+                            >
+                              {skill.charAt(0).toUpperCase() + skill.slice(1)}
+                            </Tag>
+                          )}
                         </div>
                       )}
                     </div>

@@ -24,7 +24,7 @@ export function Tag({
     size === 'sm' ? 'px-2 py-0.5 text-xs' : 'px-3 py-1 text-sm',
     'rounded-md',
     onClick && 'cursor-pointer hover:scale-105',
-    active && 'ring-1 ring-primary'
+    active && 'ring-1 ring-primary text-primary'
   );
 
   const variants = {
@@ -38,7 +38,7 @@ export function Tag({
 
   return (
     <span
-      className={cn(baseStyles, variants[variant], className)}
+      className={cn( variants[variant], baseStyles, className)}
       style={color ? { borderLeft: `3px solid ${color}` } : undefined}
       onClick={onClick}
       role={onClick ? 'button' : undefined}

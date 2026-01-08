@@ -43,8 +43,7 @@ export function ProjectCard({ repo, index = 0 }: ProjectCardProps) {
             {repo.description || 'No description provided'}
           </p>
 
-          {/* Tags */}
-          <div className="flex flex-wrap gap-1.5 mb-4">
+          <div className=" mb-4">
             {repo.language && (
               <Tag variant="language" color={languageColor}>
                 <span
@@ -54,6 +53,10 @@ export function ProjectCard({ repo, index = 0 }: ProjectCardProps) {
                 {repo.language}
               </Tag>
             )}
+          </div>
+
+          {/* Tags */}
+          <div className="flex flex-wrap gap-1.5 mb-4">
             {repo.topics.slice(0, 3).map((topic) => (
               <Tag key={topic} variant="topic">
                 {topic}

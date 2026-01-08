@@ -32,7 +32,7 @@ I’m open to PJ opportunities (remote, hybrid, or on-site) where I can keep gro
         'Owned the full product lifecycle — from backend, automations and sensitive financial integrations to frontend and deployment — working autonomously and collaborating with multiple departments.',
         'Demonstrated strong adaptability, autonomy, pressure performance and clear communication with stakeholders, ensuring reliable delivery even under tight deadlines.'
       ],
-      skills: ['Javascript', 'Node.js', 'React.js', 'Typescript', 'Python'],
+      skills: ['Javascript', 'Node.js', 'React', 'Typescript', 'Python'],
       logoPath: '/BR+_logo.avif',
     },
     {
@@ -49,7 +49,7 @@ I’m open to PJ opportunities (remote, hybrid, or on-site) where I can keep gro
         'I crafted multiple APIs, to exchange data between our softwares and financial intituitions.',
         'I developed databases using MongoDB and Mongoose, to integrate with all of our applications.'
       ],
-      skills: ['Javascript', 'Node.js', 'React.js', 'MongoDB', 'PostgresSQL', 'Puppeteer'],
+      skills: ['Javascript', 'Node.js', 'React', 'MongoDB', 'PostgresSQL', 'Puppeteer'],
       logoPath: '/vmd_logo.jpeg',
     },
     {
@@ -66,7 +66,7 @@ I’m open to PJ opportunities (remote, hybrid, or on-site) where I can keep gro
 'Emphasized hands-on projects to help students translate theoretical concepts into working solutions.',
 'Strengthened technical communication skills by adapting explanations to different learning levels and backgrounds.'
       ],
-      skills: ['Javascript', 'Node.js', 'React.js', 'MongoDB', 'PostgresSQL', 'Puppeteer'],
+      skills: ['Javascript', 'Node.js', 'React', 'MongoDB', 'PostgresSQL', 'Puppeteer'],
       logoPath: '/senai_logo.jpeg',
     },
     {
@@ -83,7 +83,7 @@ I’m open to PJ opportunities (remote, hybrid, or on-site) where I can keep gro
         'Implemented the whatsapp-web.js library as a key component of the chatbot.',
         'Integrated the chatbot with banking platforms to facilitate contract signing.'
       ],
-      skills: ['Node.js', 'React.js', 'MongoDB', 'PostgresSQL', 'Javascript'],
+      skills: ['Node.js', 'React', 'MongoDB', 'PostgresSQL', 'Javascript'],
       logoPath: '/peg_logo.jpg',
     },
   ],

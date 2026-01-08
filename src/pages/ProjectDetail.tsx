@@ -149,7 +149,11 @@ export default function ProjectDetail() {
             {repo.topics.length > 0 && (
               <div className="flex flex-wrap gap-2">
                 {repo.topics.map((topic) => (
-                  <Tag key={topic} variant="topic" size="md">
+                  <Tag 
+                    key={topic} 
+                    variant="topic" 
+                    size="md"
+                  >
                     {topic}
                   </Tag>
                 ))}

@@ -11,7 +11,7 @@ interface HeroProps {
   profile?: Record<string, string>
 }
 
-export function Hero({ user, isLoading, profile }: HeroProps) {
+export function Hero({ user, isLoading, profile, filters, handleFilter }: HeroProps) {
   if (isLoading) {
     return (
       <section >
@@ -48,9 +48,15 @@ export function Hero({ user, isLoading, profile }: HeroProps) {
           <Tag
             key={skill}
             variant="blurred"
-            className='cursor-pointer'
-            // onClick={() =>onFilterChange({ language: filters.language === lang ? null : lang })}
-            // active={filters.language === lang}
+            className='cursor-pointer font-bold'
+            onClick={() =>{
+              handleFilter({
+                topic: filters.topic.includes(skill.toLowerCase()) 
+                  ? filters.topic.filter((e) => e.toLowerCase() !== skill.toLowerCase())
+                  : [skill.toLowerCase(), ...filters.topic]
+                })
+            }}
+            active={filters.topic.includes(skill.toLowerCase())}
             size="sm"
           >
             {skill}
@@ -58,12 +64,16 @@ export function Hero({ user, isLoading, profile }: HeroProps) {
       )}
       </div>
       <div className="space-x-4">
-        <Button variant="gradient" size="sm"> 
-          Current Projects
-        </Button>
-        <Button variant="secondary" size="sm"> 
-          Contact Me
-        </Button>
+        <a href="#projects">
+          <Button variant="gradient" size="sm"> 
+            Current Projects
+          </Button>
+        </a>
+        <a href="#contact">
+          <Button variant="secondary" size="sm"> 
+            Contact Me
+          </Button>
+        </a>
       </div>
     </section>
   );

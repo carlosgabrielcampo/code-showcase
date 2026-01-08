@@ -22,11 +22,12 @@ export function Header({ }: HeaderProps) {
         
 
           <div className="flex items-center gap-6">
-            <div onClick={() => {theme === "dark" ? setTheme("light") : setTheme("dark")}}>
+            <div className='cursor-pointer' onClick={() => {theme === "dark" ? setTheme("light") : setTheme("dark")}}>
               { theme === "dark" ? <Moon /> : <Sun /> }
             </div>
-            <div className='font-bold' onClick={() => {theme === "dark" ? setTheme("light") : setTheme("dark")}}>
-              { theme === "dark" ? <p>BR</p> : <p>EN</p> }
+            <div className='font-bold cursor-default' onClick={() => {}}>
+              <p>EN</p>
+              {/* { theme === "dark" ? <p>BR</p> : <p>EN</p> } */}
             </div>
           </div>
         </nav>

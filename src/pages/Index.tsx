@@ -11,7 +11,6 @@ import { Head } from '@/components/Head';
 import { Background } from '@/components/Background';
 import { Section } from '@/components/Section';
 import { Contact } from '@/components/Contact';
-import { useTheme  } from '@/context/ThemeContext';
 
 const initialFilters: FilterState = {
   language: [],
@@ -30,6 +29,9 @@ export default function Index() {
     error: userError,
   } = useGitHubUser();
 
+  const handleFilterChange = (newFilters: Partial<FilterState>) => {
+      setFilters((prev) => ({ ...prev, ...newFilters }));
+  };
 
   return (
     <div>
@@ -37,12 +39,12 @@ export default function Index() {
       <Background>
         <Header user={user} />
         <main className='px-60 pt-48 pb-24 space-y-6 items-center md:items-start text-center md:text-left'>
-          <Hero user={user} isLoading={userLoading} profile={profile}/>
+          <Hero user={user} isLoading={userLoading} profile={profile} filters={filters} handleFilter={handleFilterChange}/>
           <Section id="projects" title="Featured projects" subtitle="Real projects, real decisions, intentional trade-offs" arialabel="projects-heading">
-            <Projects filters={filters} setFilters={setFilters} />
+            <Projects filters={filters} handleFilter={handleFilterChange} />
           </Section>
           <Section id="experience" title="Experience" subtitle="Full Stack Developer (4+ years) focused on creating valuable solutions for day to day problems.">
-            <Profile profile={profile} filters={filters} setFilters={setFilters}/>
+            <Profile profile={profile} filters={filters} handleFilter={handleFilterChange}/>
           </Section>
           <Section id="contact" title="Contact Me" subtitle="Open to collaborating or exchanging ideas on complex software problems. I’m interested in conversations about building end-to-end systems, balancing backend architecture with frontend experience">
             <Contact />

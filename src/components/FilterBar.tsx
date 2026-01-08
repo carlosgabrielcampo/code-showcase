@@ -22,7 +22,7 @@ export function FilterBar({
   filters,
   onFilterChange,
   languages,
-  topics,
+  skills,
   resultCount,
 }: FilterBarProps) {
   const hasActiveFilters = filters.language.length || filters.topic.length || filters.search;
@@ -86,41 +86,15 @@ export function FilterBar({
         </div>
       </div>
 
-      {/* Language Filters */}
-      {languages.length > 0 && (
-        <div className="flex flex-wrap gap-2 items-center">
-          <span className="text-xs text-muted-foreground font-mono mr-2">Languages:</span>
-          {languages.slice(0, 8).map((lang) => (
-            <Tag
-              key={lang}
-              variant="blurred"
-              onClick={() => 
-                onFilterChange({ 
-                  topic: filters.topic.includes(lang.toLowerCase()) 
-                    ? filters.topic.filter((e) => e.toLowerCase() !== lang.toLowerCase())
-                    : [lang.toLowerCase(), ...filters.topic]
-                  })
-              }
-              active={filters.topic.includes(lang.toLowerCase())}
-              size="sm"
-            >
-              {lang}
-            </Tag>
-          ))}
-          {languages.length > 8 && (
-            <span className="text-xs text-muted-foreground">+{languages.length - 8} more</span>
-          )}
-        </div>
-      )}
-
       {/* Topic Filters */}
-      {topics.length > 0 && (
+      {skills.length > 0 && (
         <div className="flex flex-wrap gap-2 items-center">
-          <span className="text-xs text-muted-foreground font-mono mr-2">Topics:</span>
-          {topics.slice(0, 10).map((topic) => (
+          <span className="text-xs text-muted-foreground font-mono mr-2">Filters:</span>
+          {skills.slice(0, 10).map((topic) => (
             <Tag
               key={topic}
               variant="blurred"
+              className='font-bold'
               onClick={() =>{
                 onFilterChange({
                   topic: filters.topic.includes(topic.toLowerCase()) 
@@ -131,11 +105,11 @@ export function FilterBar({
               active={filters.topic.includes(topic.toLowerCase())}
               size="sm"
             >
-              {topic}
+              {topic.charAt(0).toUpperCase() + topic.slice(1)}
             </Tag>
           ))}
-          {topics.length > 10 && (
-            <span className="text-xs text-muted-foreground">+{topics.length - 10} more</span>
+          {skills.length > 10 && (
+            <span className="text-xs text-muted-foreground">+{skills.length - 10} more</span>
           )}
         </div>
       )}

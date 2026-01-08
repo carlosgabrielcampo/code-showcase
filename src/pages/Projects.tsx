@@ -11,7 +11,7 @@ import { FilterBar } from "@/components/FilterBar";
 import { ProjectGrid } from "@/components/ProjectGrid";
 import { FilterState } from "@/types/github";
 
-export default function Projects({ filters, setFilters }: { filters: string[], setFilters: string }) {
+export default function Projects({ filters, handleFilter }: { filters: string[], handleFilter: string }) {
     const {
         data: repos,
         isLoading: reposLoading,
@@ -20,12 +20,7 @@ export default function Projects({ filters, setFilters }: { filters: string[], s
     } = useGitHubRepositories();
 
     const languages = useMemo(() => (repos ? getUniqueLanguages(repos) : []), [repos]);
-    const topics = useMemo(() => (repos ? getUniqueTopics(repos) : []), [repos]);
-    
-    const handleFilterChange = (newFilters: Partial<FilterState>) => {
-        setFilters((prev) => ({ ...prev, ...newFilters }));
-    };
-    
+    const topics = useMemo(() => (repos ? getUniqueTopics(repos) : []), [repos]);    
     const filteredRepos = useMemo(
         () => (repos ? filterRepositories(repos, filters) : []),
         [repos, filters]
@@ -48,9 +43,8 @@ export default function Projects({ filters, setFilters }: { filters: string[], s
             <>
                 <FilterBar
                     filters={filters}
-                    onFilterChange={handleFilterChange}
-                    languages={languages}
-                    topics={topics}
+                    onFilterChange={handleFilter}
+                    skills={topics}
                     resultCount={filteredRepos.length}
                 />
                 <ProjectGrid repos={filteredRepos} />
