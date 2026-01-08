@@ -44,7 +44,6 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
     } else {
       resolvedTheme = theme;
     }
-    console.log({resolvedTheme})
     root.classList.add(resolvedTheme);
     setActualTheme(resolvedTheme);
   }, [theme]);

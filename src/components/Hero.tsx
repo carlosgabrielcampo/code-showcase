@@ -62,7 +62,7 @@ export function Hero({ user, isLoading, profile }: HeroProps) {
           Current Projects
         </Button>
         <Button variant="secondary" size="sm"> 
-          Contact
+          Contact Me
         </Button>
       </div>
     </section>

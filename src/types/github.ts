@@ -74,8 +74,8 @@ export type SortOption = 'stars' | 'updated' | 'name' | 'created';
 export type SortOrder = 'asc' | 'desc';
 
 export interface FilterState {
-  language: string | null;
-  topic: string | null;
+  language: string [];
+  topic: string [];
   search: string;
   sort: SortOption;
   order: SortOrder;

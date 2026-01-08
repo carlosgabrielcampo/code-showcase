@@ -61,7 +61,7 @@ export default function Profile({ profile }: { profile: ProfileData }) {
                       </ul>
                       {exp.skills && exp.skills.length > 0 && (
                         <div className="flex flex-wrap gap-1.5 mt-3">
-                          {exp.skills.map(skill => <Tag key={skill} variant="outline" size="sm">{skill}</Tag>)}
+                          {exp.skills.map(skill => <Tag className='cursor-pointer' key={skill} variant="outline" size="sm">{skill}</Tag>)}
                         </div>
                       )}
                     </div>

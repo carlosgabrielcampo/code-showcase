@@ -37,7 +37,7 @@ export default function ProjectDetail() {
   const { data: readme } = useRepositoryReadme(name || '');
 
   const readmeExcerpt = extractFirstSection(readme || null);
-
+  
   // Calculate language percentages
   const languagePercentages = languages
     ? Object.entries(languages)

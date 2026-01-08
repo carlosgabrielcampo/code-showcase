@@ -2,7 +2,6 @@ import { Link } from 'react-router-dom';
 import type { GitHubUser } from '@/types/github';
 import { Sun, Moon } from 'lucide-react'
 import { useTheme } from '@/context/ThemeContext';
-
 interface HeaderProps {
   user?: GitHubUser | null;
   minimal?: boolean;
@@ -20,10 +19,14 @@ export function Header({ }: HeaderProps) {
               <span className="text-primary">.dev</span>
             </span>
           </Link>
+        
 
           <div className="flex items-center gap-6">
             <div onClick={() => {theme === "dark" ? setTheme("light") : setTheme("dark")}}>
               { theme === "dark" ? <Moon /> : <Sun /> }
+            </div>
+            <div className='font-bold' onClick={() => {theme === "dark" ? setTheme("light") : setTheme("dark")}}>
+              { theme === "dark" ? <p>BR</p> : <p>EN</p> }
             </div>
           </div>
         </nav>

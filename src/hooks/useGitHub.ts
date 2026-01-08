@@ -51,14 +51,12 @@ export function useRepositoryReadme(repoName: string, username?: string) {
   });
 }
 
-// Helper functions for filtering and sorting
 export function filterRepositories(
   repos: GitHubRepository[],
   filters: FilterState
 ): GitHubRepository[] {
   let filtered = [...repos];
 
-  // Filter by search term
   if (filters.search) {
     const searchLower = filters.search.toLowerCase();
     filtered = filtered.filter(
@@ -69,18 +67,11 @@ export function filterRepositories(
     );
   }
 
-  // Filter by language
-  if (filters.language) {
-    filtered = filtered.filter(
-      repo => repo.language?.toLowerCase() === filters.language?.toLowerCase()
-    );
-  }
-
-  // Filter by topic
-  if (filters.topic) {
-    filtered = filtered.filter(repo =>
-      repo.topics.some(t => t.toLowerCase() === filters.topic?.toLowerCase())
-    );
+  if (filters.topic.length) {
+    filtered = filtered.filter(repo => 
+      repo.topics.some(t => filters.topic?.includes(t.toLowerCase())) 
+      || filters.topic?.includes(repo.language?.toLowerCase())
+    )
   }
 
   return sortRepositories(filtered, filters.sort, filters.order);

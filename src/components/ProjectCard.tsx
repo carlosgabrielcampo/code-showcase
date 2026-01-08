@@ -14,7 +14,6 @@ interface ProjectCardProps {
 export function ProjectCard({ repo, index = 0 }: ProjectCardProps) {
   const languageColor = getLanguageColor(repo.language);
   const updatedAgo = formatDistanceToNow(new Date(repo.pushed_at), { addSuffix: true });
-
   return (
     <Card >
       <CardContent className="p-0" style={{ animationDelay: `${index * 50}ms`, animationFillMode: 'forwards' }}>

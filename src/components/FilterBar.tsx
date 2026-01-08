@@ -25,7 +25,7 @@ export function FilterBar({
   topics,
   resultCount,
 }: FilterBarProps) {
-  const hasActiveFilters = filters.language || filters.topic || filters.search;
+  const hasActiveFilters = filters.language.length || filters.topic.length || filters.search;
 
   const clearFilters = () => {
     onFilterChange({ language: null, topic: null, search: '' });
@@ -94,10 +94,15 @@ export function FilterBar({
             <Tag
               key={lang}
               variant="blurred"
-              onClick={() =>
-                onFilterChange({ language: filters.language === lang ? null : lang })
-              }
-              active={filters.language === lang}
+              onClick={() => {
+                onFilterChange({ 
+                  topic: filters.topic.includes(lang.toLowerCase()) 
+                    ? filters.topic.filter((e) => e.toLowerCase() !== lang.toLowerCase())
+                    : [lang.toLowerCase(), ...filters.topic]
+                  })
+                // onFilterChange({ language: filters.language === lang ? null : lang })
+              }}
+              active={filters.topic.includes(lang.toLowerCase())}
               size="sm"
             >
               {lang}
@@ -117,10 +122,14 @@ export function FilterBar({
             <Tag
               key={topic}
               variant="blurred"
-              onClick={() =>
-                onFilterChange({ topic: filters.topic === topic ? null : topic })
-              }
-              active={filters.topic === topic}
+              onClick={() =>{
+                onFilterChange({
+                  topic: filters.topic.includes(topic.toLowerCase()) 
+                    ? filters.topic.filter((e) => e.toLowerCase() !== topic.toLowerCase())
+                    : [topic.toLowerCase(), ...filters.topic]
+                  })
+              }}
+              active={filters.topic.includes(topic.toLowerCase())}
               size="sm"
             >
               {topic}

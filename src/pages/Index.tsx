@@ -14,8 +14,8 @@ import { Contact } from '@/components/Contact';
 import { useTheme  } from '@/context/ThemeContext';
 
 const initialFilters: FilterState = {
-  language: null,
-  topic: null,
+  language: [],
+  topic: [],
   search: '',
   sort: 'updated',
   order: 'desc',
@@ -38,13 +38,13 @@ export default function Index() {
         <Header user={user} />
         <main className='px-60 pt-48 pb-24 space-y-6 items-center md:items-start text-center md:text-left'>
           <Hero user={user} isLoading={userLoading} profile={profile}/>
-          <Section title="Featured projects" subtitle="Real work, real decisions. Case studies focus on tradeoffs and outcomes." arialabel="projects-heading">
+          <Section id="projects" title="Featured projects" subtitle="Real projects, real decisions, intentional trade-offs" arialabel="projects-heading">
             <Projects filters={filters} setFilters={setFilters} />
           </Section>
-          <Section title="Experience" subtitle="Full Stack Developer (4+ years) focused on creating valuable solutions for day to day problems.">
-            <Profile profile={profile}/>
+          <Section id="experience" title="Experience" subtitle="Full Stack Developer (4+ years) focused on creating valuable solutions for day to day problems.">
+            <Profile profile={profile} filters={filters} setFilters={setFilters}/>
           </Section>
-          <Section title="Get In Contact" subtitle="Open to collaborating or exchanging ideas on complex software problems. I’m interested in conversations about building end-to-end systems, balancing backend architecture with frontend experience">
+          <Section id="contact" title="Contact Me" subtitle="Open to collaborating or exchanging ideas on complex software problems. I’m interested in conversations about building end-to-end systems, balancing backend architecture with frontend experience">
             <Contact />
           </Section>
         </main>
