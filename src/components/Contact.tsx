@@ -12,12 +12,12 @@ export function Contact(){
                 <Card> 
                     <CardContent>
                         <div className="space-y-3">
-                            <div className="flex flex-wrap items-center gap-1 text-muted-foreground">
+                            <div className="flex flex-wrap items-center gap-1 text-muted-foreground sm:justify-start justify-center">
                                 <h3 className="text-foreground hover:text-primary active:text-primary cursor-pointer text-sm sm:text-base break-all" onClick={sendEmail}>carlosgabrielcampo@gmail.com</h3>
                                 <Copy className="w-4 hover:text-primary font-mono transition-colors cursor-pointer flex-shrink-0"/>
                             </div>
-                            <p className="text-muted-foreground text-sm">For interviews, technical exercises, or aligning new deliveries.</p>
-                            <div className="flex flex-wrap gap-3 pt-4">
+                            <p className="text-muted-foreground text-sm sm:text-left">For interviews, technical exercises, or aligning new deliveries.</p>
+                            <div className="flex flex-wrap gap-3 pt-4 sm:justify-start justify-center">
                                 <Button size="sm" variant="gradient" onClick={sendEmail} className="min-h-[44px]"> 
                                     Send Email
                                 </Button>
@@ -54,17 +54,21 @@ export function Contact(){
                             </div>
                             <p className="text-muted-foreground text-sm">Comfortable working independently or aligning with teams during interviews, technical challenges, or early project definition.</p>
                             <div className="flex flex-col text-sm text-muted-foreground">
-                                <div>
-                                    <span className='text-primary/80 text-lg'>• </span><span className='left-0 before:top-1/2 before:-translate-y-1/2 before:h-2 before:w-2 before:rounded-full before:bg-primary/50'>"Full Stack architecture, APIs and integrations"</span>
+                                
+                                <div className="grid grid-cols-[12px_1fr] gap-3">
+                                    <div className="text-primary/80 text-lg">•</div>
+                                    <div className="leading-relaxed text-left text-sm">"Full Stack architecture, APIs and integrations"</div>
                                 </div>
-                                <div>
-                                    <span className='text-primary/80 text-lg'>• </span><span className='left-0 before:top-1/2 before:-translate-y-1/2 before:h-2 before:w-2 before:rounded-full before:bg-primary/50'>"Automation flows, complex business logic and edge cases"</span>
+                                <div className="grid grid-cols-[12px_1fr] gap-3">
+                                    <div className="text-primary/80 text-lg">•</div>
+                                    <div className="leading-relaxed text-left text-sm">"Automation flows, complex business logic and edge cases"</div>
                                 </div>
-                                <div>
-                                    <span className='text-primary/80 text-lg'>• </span><span className='left-0 before:top-1/2 before:-translate-y-1/2 before:h-2 before:w-2 before:rounded-full before:bg-primary/50'>"Databases, performance considerations and pragmatic refactors"</span>
+                                <div className="grid grid-cols-[12px_1fr] gap-3">
+                                    <div className="text-primary/80 text-lg">•</div>
+                                    <div className="leading-relaxed text-left text-sm">"Databases, performance considerations and pragmatic refactors"</div>
                                 </div>
                             </div>
-                            <div className="flex flex-wrap gap-3 pt-4">
+                            <div className="flex gap-3 pt-4 sm:justify-start justify-center">
                                 <a href="#projects">
                                     <Button size="sm" variant="no_saturation" className="min-h-[44px]"> 
                                         Current Projects

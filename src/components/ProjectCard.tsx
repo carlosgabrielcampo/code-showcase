@@ -56,7 +56,7 @@ export function ProjectCard({ repo, index = 0 }: ProjectCardProps) {
           </div>
 
           {/* Tags */}
-          <div className="flex flex-wrap gap-1.5 mb-4">
+          <div className="flex flex-wrap gap-1.5 mb-4 justify-center sm:justify-center md:justify-start lg:justify-start">
             {repo.topics.slice(0, 3).map((topic) => (
               <Tag key={topic} variant="topic">
                 {topic}

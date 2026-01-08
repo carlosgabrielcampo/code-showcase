@@ -27,7 +27,7 @@ export default function Profile({ profile, filters, handleFilter }: { profile: P
               <CardContent style={{ animationDelay: `${index * 50}ms`, animationFillMode: 'forwards' }}>
                 <div key={exp.id} >
                   <div className="flex items-center gap-1 text-muted-foreground">
-                    <h3 className="text-foreground">{exp.title}</h3>
+                    <h3 className="text-foreground font-bold">{exp.title}</h3>
                     {
                       exp.companyUrl 
                         ? <a 
@@ -53,11 +53,16 @@ export default function Profile({ profile, filters, handleFilter }: { profile: P
                             </>
                           )}
                       </div>
-                      <ul className="text-muted-foreground text-sm leading-relaxed list-none mt-2 space-y-1">
-                        {exp.description.map((item, index) => <li>
-                          <span className='text-primary/80'>• </span><span className='left-0 before:top-1/2 before:-translate-y-1/2 before:h-2 before:w-2 before:rounded-full before:bg-primary/50' key={`${exp.id} item ${index}`}>{item}</span>
-                        </li>
-                      )}
+                      <ul className="mt-4 space-y-3 text-sm text-muted-foreground">
+                          {exp.description.map((item, index) => (
+                            <li
+                              key={`${exp.id}-item-${index}`}
+                              className="grid grid-cols-[12px_1fr] gap-3"
+                            >
+                              <div className="text-primary/80 leading-[1.6]">•</div>
+                              <div className="leading-relaxed text-left text-sm">{item}</div>
+                            </li>
+                          ))}
                       </ul>
                       {exp.skills && exp.skills.length > 0 && (
                         <div className="flex flex-wrap gap-1.5 mt-3">
