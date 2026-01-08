@@ -1,13 +1,12 @@
-import type { GitHubUser } from '@/types/github';
+import type { GitHubUser, FilterState } from '@/types/github';
+import type { ProfileData } from '@/types/profile';
 import { Tag } from './ui/Tag';
 import { Button } from './ui/button';
-import { FilterState } from '@/types/github';
-
 
 interface HeroProps {
   user?: GitHubUser | null;
   isLoading?: boolean;
-  profile?: Record<string, string>
+  profile: ProfileData;
   filters: FilterState;
   handleFilter: (newFilters: Partial<FilterState>) => void;
 }
@@ -64,14 +63,14 @@ export function Hero({ user, isLoading, profile, filters, handleFilter }: HeroPr
           </Tag>
       )}
       </div>
-      <div className="space-x-4">
+      <div className="flex flex-wrap gap-3 justify-center md:justify-start">
         <a href="#projects">
-          <Button variant="gradient" size="sm"> 
+          <Button variant="gradient" size="sm" className="min-h-[44px]"> 
             Current Projects
           </Button>
         </a>
         <a href="#contact">
-          <Button variant="secondary" size="sm"> 
+          <Button variant="secondary" size="sm" className="min-h-[44px]"> 
             Contact Me
           </Button>
         </a>

@@ -11,14 +11,14 @@ export function Contact(){
             <div>
                 <Card> 
                     <CardContent>
-                        <div className="space-y-2">
-                            <div className="flex items-center gap-1 text-muted-foreground">
-                                <h3 className="text-foreground hover:text-primary cursor-pointer" onClick={sendEmail}>carlosgabrielcampo@gmail.com</h3>
-                                <Copy className="w-4 hover:text-primary font-mono transition-colors cursor-pointer"/>
+                        <div className="space-y-3">
+                            <div className="flex flex-wrap items-center gap-1 text-muted-foreground">
+                                <h3 className="text-foreground hover:text-primary active:text-primary cursor-pointer text-sm sm:text-base break-all" onClick={sendEmail}>carlosgabrielcampo@gmail.com</h3>
+                                <Copy className="w-4 hover:text-primary font-mono transition-colors cursor-pointer flex-shrink-0"/>
                             </div>
                             <p className="text-muted-foreground text-sm">For interviews, technical exercises, or aligning new deliveries.</p>
-                            <div className="space-x-4 flex pt-4">
-                                <Button size="sm" variant="gradient" onClick={sendEmail}> 
+                            <div className="flex flex-wrap gap-3 pt-4">
+                                <Button size="sm" variant="gradient" onClick={sendEmail} className="min-h-[44px]"> 
                                     Send Email
                                 </Button>
                                 <Link 
@@ -26,8 +26,8 @@ export function Contact(){
                                     target="_blank" 
                                     rel="noopener noreferrer"
                                 >
-                                    <Button size="sm" variant="secondary">
-                                        <FaLinkedin size={30} />
+                                    <Button size="sm" variant="secondary" className="min-h-[44px] min-w-[44px]">
+                                        <FaLinkedin size={24} />
                                     </Button>
                                 </Link>
                                 <Link 
@@ -35,8 +35,8 @@ export function Contact(){
                                     target="_blank" 
                                     rel="noopener noreferrer"
                                 >
-                                    <Button size="sm" variant="secondary"> 
-                                        <FaGithub size={30} />
+                                    <Button size="sm" variant="secondary" className="min-h-[44px] min-w-[44px]"> 
+                                        <FaGithub size={24} />
                                     </Button>
                                 </Link>
                             </div>
@@ -64,9 +64,9 @@ export function Contact(){
                                     <span className='text-primary/80 text-lg'>• </span><span className='left-0 before:top-1/2 before:-translate-y-1/2 before:h-2 before:w-2 before:rounded-full before:bg-primary/50'>"Databases, performance considerations and pragmatic refactors"</span>
                                 </div>
                             </div>
-                            <div className="space-x-4 flex pt-4">
+                            <div className="flex flex-wrap gap-3 pt-4">
                                 <a href="#projects">
-                                    <Button size="sm" variant="no_saturation"> 
+                                    <Button size="sm" variant="no_saturation" className="min-h-[44px]"> 
                                         Current Projects
                                     </Button>
                                 </a>
@@ -75,7 +75,7 @@ export function Contact(){
                                     target="_blank" 
                                     rel="noopener noreferrer"
                                 >
-                                    <Button size="sm" variant="secondary"> 
+                                    <Button size="sm" variant="secondary" className="min-h-[44px]"> 
                                         Resume
                                     </Button>
                                 </Link>

@@ -26,16 +26,16 @@ export function ProjectCard({ repo, index = 0 }: ProjectCardProps) {
             <h3 className="font-mono font-semibold text-foreground transition-colors truncate">
               {repo.name}
             </h3>
-            <div
+            <a
               href={repo.html_url}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex-shrink-0 p-1.5 text-muted-foreground hover:text-primary transition-colors rounded-md hover:bg-secondary"
+              className="flex-shrink-0 p-2.5 min-w-[44px] min-h-[44px] flex items-center justify-center text-muted-foreground hover:text-primary active:text-primary transition-colors rounded-md hover:bg-secondary"
               onClick={(e) => e.stopPropagation()}
               aria-label={`View ${repo.name} on GitHub`}
             >
               <ExternalLink className="w-4 h-4" />
-            </div>
+            </a>
           </header>
 
           {/* Description */}

@@ -38,7 +38,7 @@ export default function Index() {
       <Head />
       <Background>
         <Header user={user} />
-        <main className='px-60 pt-48 pb-24 space-y-6 items-center md:items-start text-center md:text-left'>
+        <main className='px-4 sm:px-8 md:px-16 lg:px-32 xl:px-60 pt-24 md:pt-48 pb-12 md:pb-24 space-y-6 items-center md:items-start text-center md:text-left'>
           <Hero user={user} isLoading={userLoading} profile={profile} filters={filters} handleFilter={handleFilterChange}/>
           <Section id="projects" title="Featured projects" subtitle="Real projects, real decisions, intentional trade-offs" arialabel="projects-heading">
             <Projects filters={filters} handleFilter={handleFilterChange} />
