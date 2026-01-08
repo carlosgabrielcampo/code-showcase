@@ -19,78 +19,71 @@ I’m open to PJ opportunities (remote, hybrid, or on-site) where I can keep gro
   experience: [
     {
       id: 'exp-1',
-      title: 'Full-stack Developer',
+      title: 'Full Stack Developer',
       company: 'BR+ Promotora',
       companyUrl: 'https://www.brmaispromotora.com.br/',
-      location: 'Florianópolis, Santa Catarina, Brasil',
+      location: 'Florianópolis, Brazil (On-site)',
       startDate: '2025-01',
       endDate: '2025-11',
-      description: `Built client-acquisition automations using banking APIs, enabling identification of over 5,000 eligible leads for contracts.
-
-Implemented WhatsApp-based automation flows to enable clients to sign contracts directly via app — approximately 25% of clients completed contracts autonomously.
-
-Designed and managed PostgreSQL and MongoDB databases to assemble sales funnel analytics, empowering the sales team to pinpoint high-impact campaigns and channels.
-
-Owned the full product lifecycle — from backend, automations and sensitive financial integrations to frontend and deployment — working autonomously and collaborating with multiple departments.
-
-Demonstrated strong adaptability, autonomy, pressure performance and clear communication with stakeholders, ensuring reliable delivery even under tight deadlines.`,
-      skills: ['Javascript', 'Node.js', 'React.js', 'Typescript', 'Python'],
+      description: [
+        'Built client-acquisition automations using banking APIs, enabling identification of over 5,000 eligible leads for contracts.',
+        'Implemented WhatsApp-based automation flows to enable clients to sign contracts directly via app — approximately 25% of clients completed contracts autonomously.',
+        'Designed and managed PostgreSQL and MongoDB databases to assemble sales funnel analytics, empowering the sales team to pinpoint high-impact campaigns and channels.',
+        'Owned the full product lifecycle — from backend, automations and sensitive financial integrations to frontend and deployment — working autonomously and collaborating with multiple departments.',
+        'Demonstrated strong adaptability, autonomy, pressure performance and clear communication with stakeholders, ensuring reliable delivery even under tight deadlines.'
+      ],
+      skills: ['Javascript', 'Node.js', 'React', 'Typescript', 'Python'],
       logoPath: '/BR+_logo.avif',
     },
     {
       id: 'exp-2',
-      title: 'Full-stack Developer',
+      title: 'Full Stack Developer',
       company: 'VMD Crédito',
       companyUrl: 'https://www.vmdcredito.com.br/',
-      location: 'São José, Santa Catarina, Brasil',
+      location: 'São José, Brazil (On-site)',
       startDate: '2024-04',
       endDate: '2025-11',
-      description: `I designed and implemented Node.js-based bots, automating repetitive processes to boost workflow efficiency.
-
-  Built internal tools using NodeJS and Pupeteer.js to automate web scraping, providing us with valuable data and insights for informed decision-making
-
-  I crafted multiple APIs, to exchange data between our softwares and financial intituitions.
-
-  I developed databases using MongoDB and Mongoose, to integrate with all of our applications.`,
-      skills: ['Javascript', 'Node.js', 'React.js', 'MongoDB', 'PostgresSQL', 'Puppeteer'],
+      description: [
+        'I designed and implemented Node.js-based bots, automating repetitive processes to boost workflow efficiency.',
+        'Built internal tools using NodeJS and Pupeteer.js to automate web scraping, providing us with valuable data and insights for informed decision-making',
+        'I crafted multiple APIs, to exchange data between our softwares and financial intituitions.',
+        'I developed databases using MongoDB and Mongoose, to integrate with all of our applications.'
+      ],
+      skills: ['Javascript', 'Node.js', 'React', 'MongoDB', 'PostgresSQL', 'Puppeteer'],
       logoPath: '/vmd_logo.jpeg',
     },
     {
       id: 'exp-3',
       title: 'Programming teacher',
-      company: 'SENAI/SC - Serviço Nacional de Aprendizagem Industrial',
+      company: 'Serviço Nacional de Aprendizagem Industrial',
       companyUrl: 'https://www.vmdcredito.com.br/',
-      location: 'Florianópolis, Santa Catarina, Brasil',
+      location: 'Florianópolis, Brazil (On-site)',
       startDate: '2022-11',
       endDate: '2023-10',
-      description: `Developed and delivered comprehensive JavaScript lessons, catering to students of beginner levels.
-
-Focused on hands-on learning with real-world projects, allowing students to apply JavaScript concepts to practical scenarios.
-
-My classes encompass Web Development introductory topics: JavaScript (ES6+), Front-end Technologies (HTML5, CS3), NodeJS, DOM manipulation, Webpack, Modules and Asynchronicity.
-
-Developed and delivered comprehensive JavaScript lessons, catering to students of beginner levels. Focused on hands-on learning with real-world projects, allowing students to apply JavaScript concepts to practical scenarios. My classes encompass Web Development introductory topics: JavaScript (ES6+), Front-end Technologies (HTML5, CS3), NodeJS, DOM manipulation, Webpack, Modules and Asynchronicity.`,
-      skills: ['Javascript', 'Node.js', 'React.js', 'MongoDB', 'PostgresSQL', 'Puppeteer'],
+      description: [
+        'Designed and delivered JavaScript courses for beginner-level students, focusing on practical learning and real-world application.',
+'Taught core web development concepts including JavaScript (ES6+), HTML5, CSS3, Node.js, DOM manipulation, modules, asynchronous programming, and basic tooling such as Webpack.',
+'Emphasized hands-on projects to help students translate theoretical concepts into working solutions.',
+'Strengthened technical communication skills by adapting explanations to different learning levels and backgrounds.'
+      ],
+      skills: ['Javascript', 'Node.js', 'React', 'MongoDB', 'PostgresSQL', 'Puppeteer'],
       logoPath: '/senai_logo.jpeg',
     },
     {
       id: 'exp-4',
-      title: 'Full-stack Developer',
+      title: 'Full Stack Developer',
       company: 'PEG DE VOLTA',
       companyUrl: 'https://www.instagram.com/pegdevolta/',
-      location: 'São José, Santa Catarina, Brasil',
+      location: 'São José, Brazil (On-site)',
       startDate: '2021-11',
       endDate: '2023-09',
-      description: `Developed a chatbot that handled the entire sales process for financial services.
-
-The chatbot covered the customer journey from initial attraction to the final contract signing.
-
-Implemented the whatsapp-web.js library as a key component of the chatbot.
-
-Integrated the chatbot with banking platforms to facilitate contract signing.
-
-The project concluded in September 2023, due to changes in the company's strategic focus and priorities.`,
-      skills: ['Node.js', 'React.js', 'MongoDB', 'PostgresSQL', 'Javascript'],
+      description: [
+        'Developed a chatbot that handled the entire sales process for financial services.',
+        'The chatbot covered the customer journey from initial attraction to the final contract signing.',
+        'Implemented the whatsapp-web.js library as a key component of the chatbot.',
+        'Integrated the chatbot with banking platforms to facilitate contract signing.'
+      ],
+      skills: ['Node.js', 'React', 'MongoDB', 'PostgresSQL', 'Javascript'],
       logoPath: '/peg_logo.jpg',
     },
   ],
@@ -108,17 +101,7 @@ The project concluded in September 2023, due to changes in the company's strateg
     },
   ],
 
-  skills: [
-    'TypeScript',
-    'React',
-    'Node.js',
-    'PostgreSQL',
-    'Docker',
-    'REST APIs',
-    'Python',
-    'Tailwind CSS',
-    'Git',
-  ],
+  skills: [ 'React', 'Node.js', 'MongoDB', 'Puppeteer', 'REST APIs', 'Typescript', 'Tailwind CSS' ],
 
   certifications: [
     {
