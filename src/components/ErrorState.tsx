@@ -13,8 +13,8 @@ export function ErrorState({
   onRetry,
 }: ErrorStateProps) {
   return (
-    <div className="flex flex-col items-center justify-center py-20 text-center">
-      <div className="w-16 h-16 mb-4 rounded-full bg-destructive/10 flex items-center justify-center">
+    <div className="flex flex-col items-center justify-center pt-10 text-center">
+      <div className="w-10 h-10 mb-4 rounded-full flex items-center justify-center">
         <AlertCircle className="w-8 h-8 text-destructive" />
       </div>
       <h3 className="text-lg font-medium text-foreground mb-2">{title}</h3>

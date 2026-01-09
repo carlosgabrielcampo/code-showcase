@@ -75,7 +75,7 @@ export default function ProjectDetail() {
     return (
       <div className="min-h-screen bg-background">
         <Header user={user} minimal />
-        <div className="container max-w-4xl mx-auto px-4 py-12">
+        <div className="container max-w-4xl mx-auto px-4">
           <Link
             to="/"
             className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors mb-8"
@@ -107,18 +107,8 @@ export default function ProjectDetail() {
       </Helmet>
 
       <div className="min-h-screen bg-background">
-        <Header user={user} minimal />
 
-        <main className="container max-w-4xl mx-auto px-4 py-12">
-          {/* Back Link */}
-          <Link
-            to="/"
-            className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors mb-8 group"
-          >
-            <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
-            Back to projects
-          </Link>
-
+        <main className="container max-w-4xl mx-auto px-4 ">
           {/* Project Header */}
           <header className="mb-12 opacity-0 animate-fade-up" style={{ animationFillMode: 'forwards' }}>
             <div className="flex items-start justify-between gap-4 mb-4">

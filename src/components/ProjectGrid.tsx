@@ -8,7 +8,7 @@ interface ProjectGridProps {
 export function ProjectGrid({ repos }: ProjectGridProps) {
   if (repos.length === 0) {
     return (
-      <div className="flex flex-col items-center justify-center py-20 text-center">
+      <div className="flex flex-col items-center justify-center py-[100px] text-center">
         <p className="text-sm text-muted-foreground max-w-sm">
           Try adjusting your filters or search terms to find what you're looking for.
         </p>

@@ -2,12 +2,13 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Outlet } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
 import Index from "./pages/Index";
 import ProjectDetail from "./pages/ProjectDetail";
 import NotFound from "./pages/NotFound";
 import { ThemeProvider } from "./context/ThemeContext";
+import { Header } from "./components/Header";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -19,6 +20,15 @@ const queryClient = new QueryClient({
   },
 });
 
+
+const HeaderLayout: React.FC = () => {
+  return (
+      <Header >
+        <Outlet />
+      </Header>
+  );
+};
+
 const App = () => (
   <HelmetProvider>
     <ThemeProvider>
@@ -28,9 +38,11 @@ const App = () => (
           <Sonner />
           <BrowserRouter>
             <Routes>
-              <Route path="/" element={<Index />} />
-              <Route path="/projects/:name" element={<ProjectDetail />} />
-              <Route path="*" element={<NotFound />} />
+              <Route Component={HeaderLayout} >
+                <Route path="/" element={<Index />} />
+                <Route path="/projects/:name" element={<ProjectDetail />} />
+                <Route path="*" element={<NotFound />} />
+              </Route>
             </Routes>
           </BrowserRouter>
         </TooltipProvider>

@@ -10,18 +10,19 @@ import { LoadingState } from "@/components/LoadingState";
 import { FilterBar } from "@/components/FilterBar";
 import { ProjectGrid } from "@/components/ProjectGrid";
 import { FilterState } from "@/types/github";
+import { GITHUB_PROJECTS } from "@/config/projects";
 
 
 export default function Projects({ filters, handleFilter }: { filters: FilterState, handleFilter: (newFilters: Partial<FilterState>) => void }) {
-    const {
-        data: repos,
-        isLoading: reposLoading,
-        error: reposError,
-        refetch,
-    } = useGitHubRepositories();
+    // const {
+    //     data: repos,
+    //     isLoading: reposLoading,
+    //     error: reposError,
+    //     refetch,
+    // } = useGitHubRepositories();
 
-    const languages = useMemo(() => (repos ? getUniqueLanguages(repos) : []), [repos]);
-    const topics = useMemo(() => (repos ? getUniqueTopics(repos) : []), [repos]);    
+    const repos = GITHUB_PROJECTS
+    const topics = useMemo(() => (GITHUB_PROJECTS ? getUniqueTopics(GITHUB_PROJECTS) : GITHUB_PROJECTS), [repos]);    
     const filteredRepos = useMemo(
         () => (repos ? filterRepositories(repos, filters) : []),
         [repos, filters]
@@ -29,7 +30,7 @@ export default function Projects({ filters, handleFilter }: { filters: FilterSta
 
     return (
         <>
-            {reposError ? (
+            {/* {reposError ? (
                 <ErrorState
                     title="Failed to load projects"
                     message={reposError instanceof Error ? reposError.message : 'An error occurred'}
@@ -40,7 +41,7 @@ export default function Projects({ filters, handleFilter }: { filters: FilterSta
                 <div className="h-32 bg-secondary/30 rounded-lg animate-pulse mb-8" />
                 <LoadingState />
             </>
-            ) : (
+            ) : ( */}
             <>
                 <FilterBar
                     filters={filters}
@@ -50,7 +51,7 @@ export default function Projects({ filters, handleFilter }: { filters: FilterSta
                 />
                 <ProjectGrid repos={filteredRepos} />
             </>
-            )}
+            {/* )} */}
         </>
     )
 }
