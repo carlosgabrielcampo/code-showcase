@@ -24,6 +24,7 @@ export const LANGUAGE_COLORS: Record<string, string> = {
   CSS: '#563d7c',
   Shell: '#89e051',
   Dockerfile: '#384d54',
+  SCSS: "#cc6699"
 };
 
 export const getLanguageColor = (language: string | null): string => {
