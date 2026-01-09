@@ -1,21 +1,22 @@
 import { Link } from 'react-router-dom';
-import type { GitHubUser } from '@/types/github';
 import { Sun, Moon } from 'lucide-react'
 import { useTheme } from '@/context/ThemeContext';
 import { Head } from './Head';
+import { useScrollProgress } from '@/hooks/useScroll';
 interface HeaderProps {
   children?: React.ReactElement;
 }
 
 export function Header({ children }: HeaderProps) {
   const { theme, setTheme } = useTheme();
+  useScrollProgress()
   return (
-    <>
+    <div>
       <Head />
       <header className="fixed w-full top-0 left-0 right-0 w-[100%] z-[100] border-b border-border bg-background/80 backdrop-blur-md supports-[backdrop-filter]:bg-background/60">
         <div className="mx-auto py-1 px-4 sm:px-8 md:px-16 lg:px-32 xl:px-60">
           <nav className="flex items-center justify-between">
-            <Link to="/" className="flex items-center gap-2 text-foreground">
+            <Link to="/" className="flex items-center gap-2 text-foreground hover:text-primary">
               <span className="font-mono font-semibold text-md">
                 carlosroman<span className="text-primary">.dev</span>
               </span>
@@ -34,10 +35,14 @@ export function Header({ children }: HeaderProps) {
             </div>
           </nav>
         </div>
+
+        <div className="absolute bottom-0 left-0 h-[2px] w-full bg-transparent">
+          <div id="scroll-progress" className="h-full bg-primary origin-left scale-x-0" />
+        </div>
       </header>
-      <div className='pt-12 md:pt-24'>
+      <div className='pt-12 md:pt-24 '>
         {children}
       </div>
-    </>
+    </div>
   );
 }

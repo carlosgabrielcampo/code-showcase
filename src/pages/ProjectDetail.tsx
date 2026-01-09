@@ -53,7 +53,7 @@ export default function ProjectDetail() {
 
   if (isLoading) {
     return (
-      <div className="min-h-screen bg-background">
+      <div className="bg-background">
         <Header user={user} minimal />
         <div className="container max-w-4xl mx-auto px-4 py-12">
           <div className="animate-pulse space-y-8">
@@ -73,7 +73,7 @@ export default function ProjectDetail() {
 
   if (error || !repo) {
     return (
-      <div className="min-h-screen bg-background">
+      <div className="bg-background">
         <Header user={user} minimal />
         <div className="container max-w-4xl mx-auto px-4">
           <Link

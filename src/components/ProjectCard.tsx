@@ -30,7 +30,7 @@ export function ProjectCard({ repo, index = 0 }: ProjectCardProps) {
               href={repo.html_url}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex-shrink-0 p-2.5 min-w-[44px] min-h-[44px] flex items-center justify-center text-muted-foreground hover:text-primary active:text-primary transition-colors rounded-md hover:bg-secondary"
+              className="relative  flex-shrink-0  flex items-center justify-center text-muted-foreground hover:text-primary active:text-primary transition-colors rounded-md hover:bg-secondary"
               onClick={(e) => e.stopPropagation()}
               aria-label={`View ${repo.name} on GitHub`}
             >

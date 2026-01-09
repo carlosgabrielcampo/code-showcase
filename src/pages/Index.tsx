@@ -26,9 +26,8 @@ export default function Index() {
   };
 
   return (
-    <div>
       <Background>
-        <main className='px-4 pt-12 sm:px-8 md:px-16 lg:px-32 xl:px-60 pb-12 md:pb-24 space-y-6 items-center md:items-start text-center md:text-left'>
+        <main className='px-4 pt-12 sm:px-8 md:px-16 lg:px-32 xl:px-60 pb-12 md:pb-24 space-y-6 items-center md:items-start text-center md:text-left '>
           <Hero profile={profile} filters={filters} handleFilter={handleFilterChange}/>
           <Section id="projects" title="Featured projects" subtitle="Real projects, real decisions, intentional trade-offs" arialabel="projects-heading">
             <Projects filters={filters} handleFilter={handleFilterChange} />
@@ -42,6 +41,5 @@ export default function Index() {
         </main>
         <Footer />
       </Background>
-    </div>
   );
 }

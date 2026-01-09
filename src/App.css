@@ -1,9 +1,14 @@
 #root {
-margin: 0;
+  margin: 0;
   padding: 0;
-  max-width: 100vw;
-  height: 100%;
-  overflow-x: hidden; /* Crucial for Android Google App */
+}
+
+html {
+  scrollbar-width: none;
+}
+
+html::-webkit-scrollbar {
+  display: none;
 }
 
 .logo {
