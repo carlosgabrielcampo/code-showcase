@@ -29,14 +29,16 @@ export function ProjectCard({ repo, index = 0 }: ProjectCardProps) {
     <Card >
       <CardContent className="p-0" style={{ animationDelay: `${index * 50}ms`, animationFillMode: 'forwards' }}>
         <div className="flex flex-col h-full p-5 ">
-          <Link to={
-            PROFILE_CASES[repo.name] 
-              ? `/projects/${repo.name}` 
-              : repo.html_url 
-                ? repo.html_url
-                : repo.homepage
-          } 
-          className='flex flex-col h-full '>
+          <Link 
+            // to={
+            //   PROFILE_CASES[repo.name] 
+            //     ? `/projects/${repo.name}` 
+            //     : repo.html_url 
+            //       ? repo.html_url
+            //       : repo.homepage
+            // } 
+            className='flex flex-col h-full '
+          >
           <header className="flex items-start justify-between gap-4 mb-3">
             <h3 className="font-mono font-semibold text-foreground transition-colors truncate">
               {repo.name}
@@ -88,9 +90,9 @@ export function ProjectCard({ repo, index = 0 }: ProjectCardProps) {
           <footer className="flex items-center justify-center gap-3 pt-3 border-t border-border/50 text-xs text-muted-foreground">
             {repo.html_url && 
               <Link
-                to={repo.html_url}
-                target="_blank"
-                rel="noopener noreferrer"
+                // to={repo.html_url}
+                // target="_blank"
+                // rel="noopener noreferrer"
               >
                 <Button 
                   variant='secondary'
@@ -103,7 +105,7 @@ export function ProjectCard({ repo, index = 0 }: ProjectCardProps) {
             {
             PROFILE_CASES[repo.name] && 
               <Link
-                to={`/projects/${repo.name}`}
+                // to={`/projects/${repo.name}`}
               >
                 <Button variant='secondary' size='sm'>
                   Case
@@ -112,9 +114,9 @@ export function ProjectCard({ repo, index = 0 }: ProjectCardProps) {
             }
             { repo.homepage && 
               <Link
-                to={repo.homepage}
-                target="_blank"
-                rel="noopener noreferrer"
+                // to={repo.homepage}
+                // target="_blank"
+                // rel="noopener noreferrer"
               >
                 <Button 
                   variant='secondary'
