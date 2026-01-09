@@ -99,12 +99,12 @@ export const GITHUB_PROJECTS: GithubProjects[] = [
     "is_template": false,
     "web_commit_signoff_required": false,
     "topics": [
-        "legacy",
-        "nodejs",
+        "Legacy",
+        "NodeJs",
         "puppeteer",
-        "rest-api",
-        "mongodb",
-        "postgressql"
+        "rest-Api",
+        "MongoDB",
+        "PostgresSQL"
     ],
     "visibility": "public",
     "forks": 0,
@@ -213,7 +213,7 @@ export const GITHUB_PROJECTS: GithubProjects[] = [
     "allow_forking": true,
     "is_template": false,
     "web_commit_signoff_required": false,
-    "topics": ['typescript', 'css', 'react'],
+    "topics": ['typescript', 'CSS', 'react'],
     "visibility": "public",
     "forks": 0,
     "open_issues": 0,
@@ -319,9 +319,10 @@ export const GITHUB_PROJECTS: GithubProjects[] = [
     "is_template": false,
     "web_commit_signoff_required": false,
     "topics": [
-      "docker",
-      "nodejs",
-      "postgresql"
+      "Legacy",
+      "Docker",
+      "NodeJs",
+      "PostgresSQL"
     ],
     "visibility": "public",
     "forks": 0,
