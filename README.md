@@ -58,10 +58,10 @@ src/
 npm install
 ```
 
-### Install dependencies
+### Run in development
 
 ```bash
-npm install
+npm run dev
 ```
 
 ### Build for production
