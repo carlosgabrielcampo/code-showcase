@@ -50,46 +50,48 @@ export function ProjectCard({ repo, index = 0 }: ProjectCardProps) {
             </h3>
           </header>
 
-          <p className="text-sm text-muted-foreground mb-4 line-clamp-3 h-16">
-            {repo.description || 'No description provided'}
-          </p>
-              {
-                languagePercentages.length > 0 && 
-                <div className='mb-4'>
-                    <div className="h-1 rounded-full overflow-hidden flex mb-4">
-                      {languagePercentages.map((lang, i) => (
-                        <div
-                        key={lang.name}
-                        className="h-full transition-all duration-300"
-                        style={{
-                          width:`${lang.percentage}%`,
-                          backgroundColor: lang.color,
-                          marginLeft: i > 0 ? '2px' : 0,
-                        }}
-                        title={`${lang.name}`}
-                        />
-                      ))}
-                    </div>
-                    <div className="flex flex-wrap gap-1 items-center justify-center">
-                      {languagePercentages.map((lang) => (
-                        <Tag
-                          key={lang.name}
-                          variant="outline"
-                        >
-                          <div key={lang.name} className="flex items-center gap-1 text-xs">
-                            <span
-                              className="w-2 h-2 rounded-full"
-                              style={{ backgroundColor: lang.color }}
-                              />
-                            <span className="text-foreground font-mono">{lang.name}</span>
-                            <span className="text-muted-foreground">
-                            </span>
-                          </div>
-                        </Tag>
-                      ))}
-                    </div>
+          <div className='h-full'>
+            <p className="text-sm text-muted-foreground mb-4 line-clamp-3 h-16">
+              {repo.description || 'No description provided'}
+            </p>
+            {
+              languagePercentages.length > 0 && 
+              <div className='mb-4'>
+                  <div className="h-1 rounded-full overflow-hidden flex mb-4">
+                    {languagePercentages.map((lang, i) => (
+                      <div
+                      key={lang.name}
+                      className="h-full transition-all duration-300"
+                      style={{
+                        width:`${lang.percentage}%`,
+                        backgroundColor: lang.color,
+                        marginLeft: i > 0 ? '2px' : 0,
+                      }}
+                      title={`${lang.name}`}
+                      />
+                    ))}
                   </div>
-              }
+                  <div className="flex flex-wrap gap-1 items-center justify-center h-full">
+                    {languagePercentages.map((lang) => (
+                      <Tag
+                        key={lang.name}
+                        variant="outline"
+                      >
+                        <div key={lang.name} className="flex items-center gap-1 text-xs">
+                          <span
+                            className="w-2 h-2 rounded-full"
+                            style={{ backgroundColor: lang.color }}
+                            />
+                          <span className="text-foreground font-mono">{lang.name}</span>
+                          <span className="text-muted-foreground">
+                          </span>
+                        </div>
+                      </Tag>
+                    ))}
+                  </div>
+                </div>
+            }
+          </div>
           </Link>
 
           <footer className="flex items-center justify-center gap-3 pt-3 border-t border-border/50 text-xs text-muted-foreground">
