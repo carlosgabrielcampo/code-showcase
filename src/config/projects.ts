@@ -27,7 +27,7 @@ export const GITHUB_PROJECTS: GithubProjects[] = [  {
       "site_admin": false
     },
     "html_url": "https://github.com/carlosgabrielcampo/code-showcase",
-    "description": null,
+    "description": "A personal portfolio built with React, TypeScript, and Vite, focused on clarity, performance, and maintainability.Showcases professional experience, featured projects with filtering, and a data-driven content structure, using Tailwind CSS and shadcn/ui for accessible, composable UI.",
     "fork": false,
     "url": "https://api.github.com/repos/carlosgabrielcampo/code-showcase",
     "forks_url": "https://api.github.com/repos/carlosgabrielcampo/code-showcase/forks",
@@ -235,7 +235,7 @@ export const GITHUB_PROJECTS: GithubProjects[] = [  {
       "user_view_type": "public",
       "site_admin": false
     },
-    "html_url": "https://github.com/carlosgabrielcampo/crm-model",
+    "html_url": "",
     "description": null,
     "fork": false,
     "url": "https://api.github.com/repos/carlosgabrielcampo/crm-model",

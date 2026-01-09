@@ -26,7 +26,7 @@ export interface GithubProjects {
       "site_admin": boolean
     };
     "html_url": string;
-    "description": "Config files for my GitHub profile.";
+    "description": string;
     "fork": boolean;
     "url": string;
     "forks_url": string;

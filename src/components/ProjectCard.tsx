@@ -45,7 +45,7 @@ export function ProjectCard({ repo, index = 0 }: ProjectCardProps) {
             </h3>
           </header>
 
-          <p className="text-sm text-muted-foreground mb-4 line-clamp-2 flex-grow">
+          <p className="text-sm text-muted-foreground mb-4 line-clamp-3 flex-grow">
             {repo.description || 'No description provided'}
           </p>
               {
@@ -90,9 +90,9 @@ export function ProjectCard({ repo, index = 0 }: ProjectCardProps) {
           <footer className="flex items-center justify-center gap-3 pt-3 border-t border-border/50 text-xs text-muted-foreground">
             {repo.html_url && 
               <Link
-                // to={repo.html_url}
-                // target="_blank"
-                // rel="noopener noreferrer"
+                to={repo.html_url}
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 <Button 
                   variant='secondary'
@@ -114,9 +114,9 @@ export function ProjectCard({ repo, index = 0 }: ProjectCardProps) {
             }
             { repo.homepage && 
               <Link
-                // to={repo.homepage}
-                // target="_blank"
-                // rel="noopener noreferrer"
+                to={repo.homepage}
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 <Button 
                   variant='secondary'

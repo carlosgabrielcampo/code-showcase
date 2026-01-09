@@ -1,12 +1,9 @@
 import { useMemo } from "react";
 import {
   filterRepositories,
-  getUniqueLanguages,
   getUniqueTopics,
   useGitHubRepositories,
 } from '@/hooks/useGitHub';
-import { ErrorState } from "@/components/ErrorState";
-import { LoadingState } from "@/components/LoadingState";
 import { FilterBar } from "@/components/FilterBar";
 import { ProjectGrid } from "@/components/ProjectGrid";
 import { FilterState } from "@/types/github";
@@ -14,12 +11,12 @@ import { GITHUB_PROJECTS } from "@/config/projects";
 
 
 export default function Projects({ page_text, filters, handleFilter }: { page_text: any, filters: FilterState, handleFilter: (newFilters: Partial<FilterState>) => void }) {
-    const {
-        // data: repos,
-        isLoading: reposLoading,
-        error: reposError,
-        refetch,
-    } = useGitHubRepositories();
+    // const {
+    //     // data: repos,
+    //     isLoading: reposLoading,
+    //     error: reposError,
+    //     refetch,
+    // } = useGitHubRepositories();
     const repos = GITHUB_PROJECTS
     const topics = useMemo(() => (GITHUB_PROJECTS ? getUniqueTopics(GITHUB_PROJECTS) : GITHUB_PROJECTS), [repos]);    
     const filteredRepos = useMemo(
