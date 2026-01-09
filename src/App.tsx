@@ -9,6 +9,7 @@ import ProjectDetail from "./pages/ProjectDetail";
 import NotFound from "./pages/NotFound";
 import { ThemeProvider } from "./context/ThemeContext";
 import { Header } from "./components/Header";
+import { LanguageProvider } from "./context/LanguageContext";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -29,25 +30,28 @@ const HeaderLayout: React.FC = () => {
   );
 };
 
+
 const App = () => (
   <HelmetProvider>
-    <ThemeProvider>
-      <QueryClientProvider client={queryClient}>
-        <TooltipProvider>
-          <Toaster />
-          <Sonner />
-          <BrowserRouter>
-            <Routes>
-              <Route Component={HeaderLayout} >
-                <Route path="/" element={<Index />} />
-                <Route path="/projects/:name" element={<ProjectDetail />} />
-                <Route path="*" element={<NotFound />} />
-              </Route>
-            </Routes>
-          </BrowserRouter>
-        </TooltipProvider>
-      </QueryClientProvider>
-    </ThemeProvider>
+    <LanguageProvider>
+      <ThemeProvider>
+        <QueryClientProvider client={queryClient}>
+          <TooltipProvider>
+            <Toaster />
+            <Sonner />
+            <BrowserRouter>
+              <Routes>
+                <Route Component={HeaderLayout} >
+                  <Route path="/" element={<Index />} />
+                  <Route path="/projects/:name" element={<ProjectDetail />} />
+                  <Route path="*" element={<NotFound />} />
+                </Route>
+              </Routes>
+            </BrowserRouter>
+          </TooltipProvider>
+        </QueryClientProvider>
+      </ThemeProvider>'
+    </LanguageProvider>
   </HelmetProvider>
 );
 

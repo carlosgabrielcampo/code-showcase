@@ -13,21 +13,20 @@ import { FilterState } from "@/types/github";
 import { GITHUB_PROJECTS } from "@/config/projects";
 
 
-export default function Projects({ filters, handleFilter }: { filters: FilterState, handleFilter: (newFilters: Partial<FilterState>) => void }) {
+export default function Projects({ page_text, filters, handleFilter }: { page_text: any, filters: FilterState, handleFilter: (newFilters: Partial<FilterState>) => void }) {
     // const {
     //     data: repos,
     //     isLoading: reposLoading,
     //     error: reposError,
     //     refetch,
     // } = useGitHubRepositories();
-
     const repos = GITHUB_PROJECTS
     const topics = useMemo(() => (GITHUB_PROJECTS ? getUniqueTopics(GITHUB_PROJECTS) : GITHUB_PROJECTS), [repos]);    
     const filteredRepos = useMemo(
         () => (repos ? filterRepositories(repos, filters) : []),
         [repos, filters]
     );
-
+    
     return (
         <>
             {/* {reposError ? (
@@ -48,8 +47,9 @@ export default function Projects({ filters, handleFilter }: { filters: FilterSta
                     onFilterChange={handleFilter}
                     skills={topics}
                     resultCount={filteredRepos.length}
+                    project_text={page_text.sections.projects}
                 />
-                <ProjectGrid repos={filteredRepos} />
+                <ProjectGrid repos={filteredRepos} project_text={page_text.sections.projects} />
             </>
             {/* )} */}
         </>

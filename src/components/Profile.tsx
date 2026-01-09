@@ -1,28 +1,27 @@
 import { Calendar, MapPin } from 'lucide-react';
 import { Tag } from '@/components/ui/Tag';
 import { Card, CardContent } from '@/components/ui/card';
-import { ProfileData } from '@/types/profile';
 import { FilterState } from '@/types/github';
 
-function formatDateRange(startDate: string, endDate?: string): string {
+export default function Profile({ page_text, filters, handleFilter }: { page_text: any; filters: FilterState, handleFilter: (newFilters: Partial<FilterState>) => void }) {
+  function formatDateRange(startDate: string, endDate?: string): string {
+    const formatDate = (date: string) => {
+      const [year, month] = date.split('-');
+      const monthNames = page_text.util.months;
+      return `${monthNames[parseInt(month) - 1]} ${year}`;
+    };
 
-  const formatDate = (date: string) => {
-    const [year, month] = date.split('-');
-    const monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-    return `${monthNames[parseInt(month) - 1]} ${year}`;
-  };
+    const start = formatDate(startDate);
+    const end = endDate ? formatDate(endDate) : page_text.util.now;
+    return `${start} - ${end}`;
+  }
 
-  const start = formatDate(startDate);
-  const end = endDate ? formatDate(endDate) : 'Present';
-  return `${start} - ${end}`;
-}
-
-export default function Profile({ profile, filters, handleFilter }: { profile: ProfileData, filters: FilterState, handleFilter: (newFilters: Partial<FilterState>) => void }) {
+  const profile = page_text.sections.experience.experiences
   return (
     <>
-      {profile.experience.length > 0 && (
+      {profile.length > 0 && (
         <div className="mb-8 flex flex-col gap-3">
-          {profile.experience.map((exp, index) => (
+          {profile.map((exp, index) => (
             <Card>
               <CardContent style={{ animationDelay: `${index * 50}ms`, animationFillMode: 'forwards' }}>
                 <div key={exp.id} className="flex flex-col" >
@@ -48,7 +47,7 @@ export default function Profile({ profile, filters, handleFilter }: { profile: P
                     <ul className="mt-4 space-y-3 text-sm text-muted-foreground">
                       {exp.description.map((item, index) => (
                         <li
-                          key={`${exp.id}-item-${index}`}
+                          key={`${exp.id}${index}`}
                           className="grid grid-cols-[12px_1fr] gap-3"
                         >
                           <div className="text-primary/80 leading-[1.6]">•</div>
@@ -71,7 +70,6 @@ export default function Profile({ profile, filters, handleFilter }: { profile: P
                                 ? filters.topic.filter((e) => e.toLowerCase() !== skill.toLowerCase())
                                 : [skill.toLowerCase(), ...filters.topic]
                             })
-                            console.log({ skill })
                           }}
                           active={filters.topic.includes(skill.toLowerCase())}
                         >

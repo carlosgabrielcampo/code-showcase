@@ -209,7 +209,7 @@ export default function ProjectDetail() {
               </div>
 
               {/* Language Legend */}
-              <div className="flex flex-wrap gap-4">
+              {/* <div className="flex flex-wrap gap-4">
                 {languagePercentages.map((lang) => (
                   <div key={lang.name} className="flex items-center gap-2 text-sm">
                     <span
@@ -222,7 +222,7 @@ export default function ProjectDetail() {
                     </span>
                   </div>
                 ))}
-              </div>
+              </div> */}
             </section>
           )}
 

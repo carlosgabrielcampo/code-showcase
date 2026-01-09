@@ -1,22 +1,6 @@
-import { ProfileData } from '@/types/profile';
+import { Experience } from '@/types/profile';
 
-export const PROFILE_DATA: ProfileData = {
-  identity: {
-    name: 'Carlos G C Roman',
-    headline: 'Full Stack Developer | Node.js, React, APIs & Automations | Fintech Experience | Fluent in English | Open to Remote Roles',
-    avatarUrl: 'https://media.licdn.com/dms/image/v2/D4D03AQF_9-s-7xIgEA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1667396628858?e=1769040000&v=beta&t=bY62tRMjVxqUxiAw24QUPP0kH0a4GcAEh949tW-GNBo', // Will fallback to GitHub avatar if empty
-    linkedInUrl: 'https://www.linkedin.com/in/carlosgcampo/?locale=en_US',
-  },
-
-  about: `👋 I’m a Full Stack Developer with 3+ years of experience building complete solutions — from backend to frontend, including API integrations and process automations.
-
-I’ve worked in the financial sector, leading internal automation projects, optimizing data workflows, and helping build the frontend of a new app. My core stack includes JavaScript, Node.js, React, and both relational and non-relational databases, with additional experience in Python and TypeScript.
-
-I’m driven by connecting technology with real-world impact — understanding business logic and delivering scalable, well-structured solutions. Focused, adaptable, and naturally curious, I thrive in collaborative environments.
-
-I’m open to PJ opportunities (remote, hybrid, or on-site) where I can keep growing technically and contribute to meaningful products. 🚀`,
-
-  experience: [
+const PROFILE_DATA: Experience[] = [
     {
       id: 'exp-1',
       title: 'Full Stack Developer',
@@ -86,41 +70,73 @@ I’m open to PJ opportunities (remote, hybrid, or on-site) where I can keep gro
       skills: ['Node.js', 'React', 'MongoDB', 'PostgresSQL', 'Javascript'],
       logoPath: '/peg_logo.jpg',
     },
-  ],
+]
 
-  education: [
-    {
-      id: 'edu-1',
-      school: 'Trybe',
-      degree: 'Web FullStack Developer',
-      field: 'Software Development',
-      startYear: 2021,
-      endYear: 2022,
-      description: 'Trybe is a web development school that has a genuine commitment to the professional success of its students. With the Shared Success Model, those who study at Trybe have the option of paying only when they are already working.There are more than 1500 hours of training that covers fundamentals of web development, development, Front-end, Back-end, computer science, software engineering, agile methodologies and soft skills.',
-      logoPath: '/betrybe_logo.jpeg',
+export const PAGE_DATA = {
+    hero: {
+        title: "High Impact",
+        position: "Full Stack Developer",
+        description: "I'm experienced in full stack development, APIs and automations, focused on building scalable and high-impact solutions.",
+        project_button: "Current Projects",
+        contact_button: "Contact Me",
+        skills: [ 'React', 'Node.js', 'MongoDB', 'Puppeteer', 'REST APIs', 'Typescript', 'Tailwind' ],
     },
-  ],
+    sections: {
+        projects: {
+            title: "Featured projects",
+            sub: "Real projects, real decisions, intentional trade-offs",
+            placeholder: "Search...",
+            filter: "Filters",
+            dropdown: [
+                { value: 'updated', label: 'Recently Updated' },
+                { value: 'stars', label: 'Most Stars' },
+                { value: 'name', label: 'Name' },
+                { value: 'created', label: 'Recently Created' }
+            ],
+            result: {
+                single: "project",
+                multiple: "projects",
+                find: "found"
+            },
+            retry: "Try adjusting your filters or search terms to find what you're looking for.",
+            clear: "Clear filters"
+        },
+        experience: {
+            title: "Experience",
+            sub: "Full Stack Developer (4+ years) focused on creating valuable solutions for day to day problems.",
+            experiences: PROFILE_DATA
+        },
+        contact: {
+            title: "Contact Me",
+            sub: "Open to collaborating or exchanging ideas on complex software problems. I’m interested in conversations about building end-to-end systems, balancing backend architecture with frontend experience",
+            container_1: {
+                title: "For interviews, technical exercises, or aligning new deliveries.",
+                email_button: "Send Email", 
+                linkedIn: "https://www.linkedin.com/in/carlosgcampo/?locale=en_US"
+              },
+            email: "carlosgabrielcampo@gmail.com",
+            email_subject: "Let's get in contact",
+            container_2: {
+                intro: "What I'm great at",
+                title: "Building reliable systems for real business problems",
+                sub: "Comfortable working independently or aligning with teams during interviews, technical challenges, or early project definition.",
+                description: [
+                  "Full Stack architecture, APIs and integrations",
+                  "Automation flows, complex business logic and edge cases",
+                  "Databases, performance considerations and pragmatic refactors"
+                ],
+                resume_link: "https://docs.google.com/document/d/1gs2qe2-4vzrr2CHzCRg2Pdwq-c3VeH0GeTQC0pfFu0A/edit?usp=sharing",
+                resume_button: "Resume",
+                project_button: "Current Projects",
+            }
+        }
+    },
+    footer: {
+      text_right: "View source on GitHub"
+    },
+    util: {
+        months: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+        now: 'Present'
+    }
+}
 
-  skills: [ 'React', 'Node.js', 'MongoDB', 'Puppeteer', 'REST APIs', 'Typescript', 'Tailwind' ],
-
-  certifications: [
-    {
-      id: 'cert-1',
-      name: 'Desenvolvimento Web',
-      issuer: 'Trybe',
-      issueDate: '2022-04',
-      credentialUrl: 'https://www.credential.net/dc77cae1-8e88-4b8a-a5da-8e103d343450#acc.iRmQlrVM',
-      logoPath: '/betrybe_logo.jpeg',
-      credentialCode: '50485837'
-    },
-    {
-      id: 'cert-2',
-      name: 'IELTS (Band 8)',
-      issuer: 'IELTS Official',
-      issueDate: '2022-04',
-      credentialUrl: 'https://www.credential.net/dc77cae1-8e88-4b8a-a5da-8e103d343450#acc.iRmQlrVM',
-      logoPath: '/ielts_logo.jpeg',
-      credentialCode: '23AU509850CAMC240A'
-    },
-  ],
-};

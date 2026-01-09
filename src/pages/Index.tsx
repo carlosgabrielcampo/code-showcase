@@ -1,14 +1,14 @@
-import { useState, useMemo } from 'react';
-import { Hero } from '@/components/Hero';
-import { PROFILE_DATA } from '@/config/profile';
-import type { FilterState } from '@/types/github';
-import Profile from '../components/Profile';
 import Projects from './Projects';
+import { Hero } from '@/components/Hero';
+import { useState } from 'react';
+import Profile from '../components/Profile';
 import { Footer } from '@/components/Footer';
-import { Background } from '@/components/Background';
 import { Section } from '@/components/Section';
 import { Contact } from '@/components/Contact';
-
+import type { FilterState } from '@/types/github';
+import { Background } from '@/components/Background';
+import { PAGE_DATA } from '@/config/lan/en_US';
+import { useLanguage } from '@/context/LanguageContext';
 const initialFilters: FilterState = {
   language: [],
   topic: [],
@@ -18,28 +18,25 @@ const initialFilters: FilterState = {
 };
 
 export default function Index() {
+  const { page_text } = useLanguage()
   const [filters, setFilters] = useState<FilterState>(initialFilters);
-  const profile = PROFILE_DATA;
-
-  const handleFilterChange = (newFilters: Partial<FilterState>) => {
-      setFilters((prev) => ({ ...prev, ...newFilters }));
-  };
-
+  const { sections: { projects, experience, contact } } = page_text
+  const handleFilterChange = (newFilters: Partial<FilterState>) => setFilters((prev) => ({ ...prev, ...newFilters }));
   return (
       <Background>
         <main className='px-4 pt-12 sm:px-8 md:px-16 lg:px-32 xl:px-60 pb-12 md:pb-24 space-y-6 items-center md:items-start text-center md:text-left '>
-          <Hero profile={profile} filters={filters} handleFilter={handleFilterChange}/>
-          <Section id="projects" title="Featured projects" subtitle="Real projects, real decisions, intentional trade-offs" arialabel="projects-heading">
-            <Projects filters={filters} handleFilter={handleFilterChange} />
+          <Hero page_text={page_text} filters={filters} handleFilter={handleFilterChange}/>
+          <Section id="projects" title={projects.title} subtitle={projects.sub}>
+            <Projects page_text={page_text} filters={filters} handleFilter={handleFilterChange} />
           </Section>
-          <Section id="experience" title="Experience" subtitle="Full Stack Developer (4+ years) focused on creating valuable solutions for day to day problems.">
-            <Profile profile={profile} filters={filters} handleFilter={handleFilterChange}/>
+          <Section id="experience" title={experience.title} subtitle={experience.sub}>
+            <Profile page_text={page_text} filters={filters} handleFilter={handleFilterChange}/>
           </Section>
-          <Section id="contact" title="Contact Me" subtitle="Open to collaborating or exchanging ideas on complex software problems. I’m interested in conversations about building end-to-end systems, balancing backend architecture with frontend experience">
-            <Contact />
+          <Section id="contact" title={contact.title} subtitle={contact.sub}>
+            <Contact page_text={page_text} />
           </Section>
         </main>
-        <Footer />
+        <Footer page_text={page_text}/>
       </Background>
   );
 }

@@ -180,6 +180,11 @@ export const GITHUB_PROJECTS: GithubProjects[] = [
     "stargazers_count": 0,
     "watchers_count": 0,
     "language": "JavaScript",
+    "languagePercentage": {
+      "JavaScript": 13473,
+      "SCSS": 13152,
+      "HTML": 1721
+    },
     "has_issues": true,
     "has_projects": true,
     "has_downloads": true,

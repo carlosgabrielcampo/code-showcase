@@ -5,8 +5,9 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 
-export const sendEmail = () => {
-    const email = "carlosgabrielcampo@gmail.com";
-    const subject = encodeURIComponent("Let's talk — Full Stack role");
-    window.location.href = `mailto:${email}?subject=${subject}`;
+export const sendEmail = ({email, subject }) => {
+    const encodedSubject = encodeURIComponent(subject);
+    window.location.href = `mailto:${email}?subject=${encodedSubject}`;
 }
+
+export const copyToClipboard = (value) => navigator.clipboard.writeText(value)

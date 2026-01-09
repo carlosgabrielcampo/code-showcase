@@ -9,7 +9,7 @@ export interface GithubProjects {
       "id": number
       "node_id": string;
       "avatar_url": string;
-      "gravatar_id": "";
+      "gravatar_id": string;
       "url": string;
       "html_url": string;
       "followers_url": string;
@@ -76,7 +76,8 @@ export interface GithubProjects {
     "size": number;
     "stargazers_count": number;
     "watchers_count": number;
-    "language": null;
+    "language": string;
+    "languagePercentage"?: Record<string, number>;
     "has_issues": boolean;
     "has_projects": boolean;
     "has_downloads": boolean;

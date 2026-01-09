@@ -45,10 +45,5 @@ export interface Certification {
 }
 
 export interface ProfileData {
-  identity: ProfileIdentity;
-  about: string;
   experience: Experience[];
-  education: Education[];
-  skills: string[];
-  certifications?: Certification[];
 }

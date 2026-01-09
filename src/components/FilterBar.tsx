@@ -2,28 +2,27 @@ import { Search, ArrowUpDown, X } from 'lucide-react';
 import { Tag } from '@/components/ui/Tag';
 import type { FilterState, SortOption } from '@/types/github';
 import { cn } from '@/lib/utils';
+import { PAGE_DATA } from '@/config/lan/en_US';
+// const { projects: project_text } = PAGE_DATA.sections
 
 interface FilterBarProps {
   filters: FilterState;
   onFilterChange: (filters: Partial<FilterState>) => void;
   skills: string[];
   resultCount: number;
+  project_text: Record<string, string>
 }
 
-const sortOptions: { value: SortOption; label: string }[] = [
-  { value: 'updated', label: 'Recently Updated' },
-  { value: 'stars', label: 'Most Stars' },
-  { value: 'name', label: 'Name' },
-  { value: 'created', label: 'Recently Created' },
-];
 
 export function FilterBar({
   filters,
   onFilterChange,
   skills,
   resultCount,
+  project_text
 }: FilterBarProps) {
   const hasActiveFilters = filters.language.length || filters.topic.length || filters.search;
+  const sortOptions: { value: SortOption; label: string }[] = project_text?.dropdown
 
   const clearFilters = () => {
     onFilterChange({ language: [], topic: [], search: '' });
@@ -31,14 +30,12 @@ export function FilterBar({
 
   return (
     <div className="space-y-4 mb-8">
-      {/* Search and Sort Row */}
       <div className="flex flex-col sm:flex-row gap-4">
-        {/* Search Input */}
         <div className="relative flex-grow">
           <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
           <input
             type="text"
-            placeholder="Search..."
+            placeholder={project_text.placeholder}
             value={filters.search}
             onChange={(e) => onFilterChange({ search: e.target.value })}
             className={cn(
@@ -87,7 +84,7 @@ export function FilterBar({
       {/* Topic Filters */}
       {skills.length > 0 && (
         <div className="flex flex-wrap gap-2 items-center">
-          <span className="text-xs text-muted-foreground font-mono mr-2">Filters:</span>
+          <span className="text-xs text-muted-foreground font-mono mr-2">{project_text.filter}:</span>
           {skills.slice(0, 10).map((topic) => (
             <Tag
               key={topic}
@@ -114,7 +111,7 @@ export function FilterBar({
 
       <div className="flex items-center justify-between pt-2 border-t border-border/50">
         <p className="text-sm text-muted-foreground font-mono">
-          {resultCount} {resultCount === 1 ? 'project' : 'projects'} found
+          {resultCount} {resultCount === 1 ? project_text.result.single : project_text.result.multiple } { project_text.result.find }
         </p>
         {hasActiveFilters && (
           <button
@@ -122,7 +119,7 @@ export function FilterBar({
             className="text-sm text-primary hover:text-primary/80 font-mono transition-colors flex items-center gap-1"
           >
             <X className="w-3 h-3" />
-            Clear filters
+            { project_text.clear }
           </button>
         )}
       </div>

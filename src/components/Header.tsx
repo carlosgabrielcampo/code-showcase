@@ -3,12 +3,14 @@ import { Sun, Moon } from 'lucide-react'
 import { useTheme } from '@/context/ThemeContext';
 import { Head } from './Head';
 import { useScrollProgress } from '@/hooks/useScroll';
+import { useLanguage } from '@/context/LanguageContext';
 interface HeaderProps {
   children?: React.ReactElement;
 }
 
 export function Header({ children }: HeaderProps) {
   const { theme, setTheme } = useTheme();
+  const { language, setLanguage } = useLanguage()
   useScrollProgress()
   return (
     <div>
@@ -29,8 +31,11 @@ export function Header({ children }: HeaderProps) {
               >
                 { theme === "dark" ? <Moon className="w-5 h-5" /> : <Sun className="w-5 h-5" /> }
               </button>
-              <div className="font-bold p-2 min-w-[44px] text-center">
-                EN
+              <div 
+                className="font-bold p-2 min-w-[44px] text-center"
+                onClick={() => setLanguage(language === "pt_BR" ? "en_US" : "pt_BR")}  
+              >
+                { language === "pt_BR" ? "PT" : "EN"}
               </div>
             </div>
           </nav>
