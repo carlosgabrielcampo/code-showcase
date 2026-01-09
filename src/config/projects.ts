@@ -213,7 +213,7 @@ export const GITHUB_PROJECTS: GithubProjects[] = [
     "allow_forking": true,
     "is_template": false,
     "web_commit_signoff_required": false,
-    "topics": ['typescript', 'CSS', 'react'],
+    "topics": ['typescript', 'CSS', 'react', 'tailwind' ],
     "visibility": "public",
     "forks": 0,
     "open_issues": 0,
