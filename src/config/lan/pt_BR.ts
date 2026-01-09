@@ -74,7 +74,7 @@ const PROFILE_DATA: Experience[] = [
 
 export const PAGE_DATA = {
   hero: {
-    title: 'Alto Impacto',
+    title: ' de Alto Impacto',
     position: 'Desenvolvedor Full Stack',
     description:
       'Tenho experiência em desenvolvimento full stack, APIs e automações, com foco na construção de soluções escaláveis e de alto impacto.',
