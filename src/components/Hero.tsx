@@ -15,13 +15,11 @@ interface HeroProps {
 export function Hero({ page_text, filters, handleFilter }: HeroProps) {
   const {language} = useLanguage()
   const { hero } = page_text
-  console.log({language})
   const heroTitle = [hero.title, <span className='text-primary'> {hero.position}</span>]
   return (
     <section className="space-y-6 items-center md:items-start text-center md:text-left">
       <h1 className="text-3xl md:text-4xl font-bold text-foreground">
         { language === "pt_BR" ? heroTitle.reverse() : heroTitle }
-        {/* {hero.title}<span className='text-primary'> {hero.position}</span> */}
       </h1>
       <p className="text-lg text-muted-foreground max-w-2xl">
         {hero.description}

@@ -85,7 +85,7 @@ export function FilterBar({
       {skills.length > 0 && (
         <div className="flex flex-wrap gap-2 items-center">
           <span className="text-xs text-muted-foreground font-mono mr-2">{project_text.filter}:</span>
-          {skills.slice(0, 10).map((topic) => (
+          {skills.map((topic) => (
             <Tag
               key={topic}
               variant="blurred"
@@ -103,9 +103,6 @@ export function FilterBar({
               {topic.charAt(0).toUpperCase() + topic.slice(1)}
             </Tag>
           ))}
-          {skills.length > 10 && (
-            <span className="text-xs text-muted-foreground">+{skills.length - 10} more</span>
-          )}
         </div>
       )}
 

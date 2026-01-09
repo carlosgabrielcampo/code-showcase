@@ -23,7 +23,12 @@ export function ProjectCard({ repo, index = 0 }: ProjectCardProps) {
           color: getLanguageColor(lang),
         }))
         .sort((a, b) => b.bytes - a.bytes)
-    : [];
+    : [{
+          name: repo.language,
+          bytes: 1,
+          percentage: 1 * 100,
+          color: getLanguageColor(repo.language),
+        }];
 
   return (
     <Card >
@@ -45,7 +50,7 @@ export function ProjectCard({ repo, index = 0 }: ProjectCardProps) {
             </h3>
           </header>
 
-          <p className="text-sm text-muted-foreground mb-4 line-clamp-3 flex-grow">
+          <p className="text-sm text-muted-foreground mb-4 line-clamp-3 h-16">
             {repo.description || 'No description provided'}
           </p>
               {

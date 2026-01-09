@@ -11,12 +11,13 @@ import { GITHUB_PROJECTS } from "@/config/projects";
 
 
 export default function Projects({ page_text, filters, handleFilter }: { page_text: any, filters: FilterState, handleFilter: (newFilters: Partial<FilterState>) => void }) {
-    // const {
-    //     // data: repos,
-    //     isLoading: reposLoading,
-    //     error: reposError,
-    //     refetch,
-    // } = useGitHubRepositories();
+//     const {
+//         data: repos,
+//         isLoading: reposLoading,
+//         error: reposError,
+//         refetch,
+//     } = useGitHubRepositories();
+// console.log(repos)
     const repos = GITHUB_PROJECTS
     const topics = useMemo(() => (GITHUB_PROJECTS ? getUniqueTopics(GITHUB_PROJECTS) : GITHUB_PROJECTS), [repos]);    
     const filteredRepos = useMemo(

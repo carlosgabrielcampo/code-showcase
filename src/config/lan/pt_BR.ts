@@ -16,7 +16,7 @@ const PROFILE_DATA: Experience[] = [
       'Assumi todo o ciclo de vida do produto — desde backend, automações e integrações financeiras sensíveis até frontend e deploy — atuando de forma autônoma e colaborando com múltiplos departamentos.',
       'Demonstrei forte adaptabilidade, autonomia, desempenho sob pressão e comunicação clara com stakeholders, garantindo entregas confiáveis mesmo sob prazos apertados.'
     ],
-    skills: ['Javascript', 'Node.js', 'React', 'Typescript', 'Python'],
+    skills: ['Javascript', 'Nodejs', 'React', 'Typescript', 'Python'],
     logoPath: '/BR+_logo.avif',
   },
   {
@@ -33,7 +33,7 @@ const PROFILE_DATA: Experience[] = [
       'Criei diversas APIs para troca de dados entre nossos softwares e instituições financeiras.',
       'Desenvolvi bancos de dados utilizando MongoDB e Mongoose, integrando-os a todas as nossas aplicações.'
     ],
-    skills: ['Javascript', 'Node.js', 'React', 'MongoDB', 'PostgresSQL', 'Puppeteer'],
+    skills: ['Javascript', 'Nodejs', 'React', 'MongoDB', 'PostgresSQL', 'Puppeteer'],
     logoPath: '/vmd_logo.jpeg',
   },
   {
@@ -50,7 +50,7 @@ const PROFILE_DATA: Experience[] = [
       'Priorizei projetos práticos para ajudar os alunos a transformar conceitos teóricos em soluções funcionais.',
       'Fortaleci habilidades de comunicação técnica ao adaptar explicações para diferentes níveis de aprendizado e perfis.'
     ],
-    skills: ['Javascript', 'Node.js', 'React', 'MongoDB', 'PostgresSQL', 'Puppeteer'],
+    skills: ['Javascript', 'Nodejs', 'React', 'MongoDB', 'PostgresSQL', 'Puppeteer'],
     logoPath: '/senai_logo.jpeg',
   },
   {
@@ -67,7 +67,7 @@ const PROFILE_DATA: Experience[] = [
       'Implementei a biblioteca whatsapp-web.js como componente central do chatbot.',
       'Integrei o chatbot com plataformas bancárias para viabilizar a assinatura de contratos.'
     ],
-    skills: ['Node.js', 'React', 'MongoDB', 'PostgresSQL', 'Javascript'],
+    skills: ['Nodejs', 'React', 'MongoDB', 'PostgresSQL', 'Javascript'],
     logoPath: '/peg_logo.jpg',
   },
 ]
@@ -80,7 +80,7 @@ export const PAGE_DATA = {
       'Tenho experiência em desenvolvimento full stack, APIs e automações, com foco na construção de soluções escaláveis e de alto impacto.',
     project_button: 'Projetos Atuais',
     contact_button: 'Entrar em Contato',
-    skills: ['React', 'Node.js', 'MongoDB', 'Puppeteer', 'APIs REST', 'Typescript', 'Tailwind'],
+    skills: ['React', 'Nodejs', 'MongoDB', 'Puppeteer', 'APIs REST', 'Typescript', 'Tailwind'],
   },
   sections: {
     projects: {
