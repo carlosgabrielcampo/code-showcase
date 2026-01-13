@@ -79,7 +79,7 @@ export const PAGE_DATA = {
         description: "I'm experienced in full stack development, APIs and automations, focused on building scalable and high-impact solutions.",
         project_button: "Current Projects",
         contact_button: "Contact Me",
-        skills: [ 'React', 'Nodejs', 'MongoDB', 'Puppeteer', 'REST APIs', 'Typescript', 'Tailwind' ],
+        skills: [ 'React', 'Nodejs', 'MongoDB', 'Puppeteer', 'REST-API', 'Typescript', 'Tailwind' ],
     },
     sections: {
         projects: {

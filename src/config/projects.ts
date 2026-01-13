@@ -215,7 +215,7 @@ export const GITHUB_PROJECTS: GithubProjects[] = [
         "Legacy",
         "NodeJs",
         "puppeteer",
-        "rest-Api",
+        "REST-API",
         "MongoDB",
         "PostgresSQL"
     ],
@@ -435,7 +435,8 @@ export const GITHUB_PROJECTS: GithubProjects[] = [
       "Docker",
       "NodeJs",
       "PostgresSQL",
-      "rest-Api"
+      "REST-API",
+      "Swagger"
     ],
     "visibility": "public",
     "forks": 0,

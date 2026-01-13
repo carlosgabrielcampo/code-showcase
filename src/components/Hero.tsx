@@ -28,7 +28,7 @@ export function Hero({ page_text, filters, handleFilter }: HeroProps) {
         { hero?.skills?.map(skill => 
           <Tag
             key={skill}
-            variant="blurred"
+            variant="default"
             className='cursor-pointer font-bold'
             onClick={() =>{
               handleFilter({
