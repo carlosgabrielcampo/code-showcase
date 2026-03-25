@@ -12,7 +12,7 @@ export default function Profile({ page_text, filters, handleFilter }: { page_tex
     };
 
     const start = formatDate(startDate);
-    const end = endDate ? formatDate(endDate) : page_text.util.now;
+    const end = endDate ? endDate.includes('-') ? formatDate(endDate) : endDate : page_text.util.now;
     return `${start} - ${end}`;
   }
 

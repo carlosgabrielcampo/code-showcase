@@ -1,6 +1,25 @@
 import { Experience } from '@/types/profile';
 
 const PROFILE_DATA: Experience[] = [
+    {
+    id: 'exp-0',
+    title: 'Desenvolvedor Mobile',
+    company: 'RDO App',
+    companyUrl: 'https://loja.rdoapp.com.br/',
+    location: 'São Paulo, Brasil (Remoto)',
+    startDate: '2026-02',
+    endDate: 'Hoje',
+    description: [
+      'Atualmente estou conduzindo a evolução completa de uma plataforma de gestão operacional, envolvendo aplicativo mobile, integração com backend legado e reestruturação arquitetural do fluxo de medições e laudos técnicos.',
+      'Estruturei a arquitetura mobile com React Native (Expo Router, autenticação baseada em estado explícito e controle de rotas protegidas)',
+      'Defini e documentação de contratos de requisição entre frontend e backend',
+      'Mapeei e padronização de payloads complexos (incluindo listas aninhadas e objetos históricos)',
+      'Implementei a criação e edição de medições com validações e controle de estados (loading, erro, vazio, sucesso)',
+      'Estruturei tarefas técnicas e roadmap organizado por telas e entregas'
+    ],
+    skills: ['React Native', 'Expo', 'EAS'],
+    logoPath: '/RDO_logo.avif',
+  },
   {
     id: 'exp-1',
     title: 'Desenvolvedor Full Stack',
